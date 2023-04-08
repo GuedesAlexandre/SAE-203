@@ -1,9 +1,24 @@
 *{
     padding : 0;
     margin : 0;
+    list-style: none;
+    text-decoration: none;
 
 }
 
 body{
-    background-image: url();
+    background-image: url(../img/background.png);
+    
+
+}
+.navlinks{
+    width:100%;
+    height:65px;
+    background-color: red;
+   
+}
+.navlinks ul{
+    display: flex;
+    justify-content: center;
+    
 }
