@@ -94,16 +94,8 @@
     </button>
 </form>
 
-
-
-
-
-
-
-
-
-
 <?php
+//début du php
 // Connexion à la base de données
 $conn = mysqli_connect("localhost", "root", "", "test");
 
