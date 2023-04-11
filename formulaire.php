@@ -41,7 +41,7 @@ if($_POST["password"] == $_POST["passconf"]){
     $password = $_POST['password'];
 }else{
     echo "données manquantes.";
-    echo "veuillez ajouter ces données";
+   
 }
     
 }
