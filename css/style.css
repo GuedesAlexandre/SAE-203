@@ -49,8 +49,9 @@ body {
   
   display: flex;
   justify-content: center;
-  margin-top:12%;
+  margin-top:5%;
   flex-direction: column;
+ 
 
 }
 .container .txt-container{
@@ -59,7 +60,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 70px;
+  font-size: 91px;
+  margin-right:1%;
  
 }
 
@@ -76,7 +78,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-items: center;
-  margin-left:10vh;
+  margin-left:9vh;
   margin-top: -8vh;
 }
 
