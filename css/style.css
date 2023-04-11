@@ -9,6 +9,7 @@
 
 body {
   background-image: url(../img/background.png);
+  scroll-behavior: smooth;
 }
 .navlinks {
   width: 100%;
