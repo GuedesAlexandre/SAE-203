@@ -27,7 +27,7 @@
 <?php
 //début du php
 // Connexion à la base de données
-$conn = mysqli_connect("localhost", "root", "", "test");
+$conn = mysqli_connect("localhost", "root", "root", "test");
 
 // Vérification de la connexion
 if (!$conn) {
