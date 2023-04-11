@@ -11,7 +11,7 @@
     <span class="signup">Sign Up</span>
     <input type="email" name="email" placeholder="Email address" class="form--input">
     <input type="password" name="password" placeholder="Password" class="form--input">
-    <input type="password" placeholder="Confirm password" class="form--input">
+    <input type="password" name="passconf" placeholder="Confirm password" class="form--input">
     
     <div class="form--marketing">
         <input id="okayToEmail" type="checkbox">
@@ -33,18 +33,25 @@ $conn = mysqli_connect("localhost", "root", "", "test");
 if (!$conn) {
     die("Connexion échouée : " . mysqli_connect_error());
 }
-if(empty($_POST["email"] ) and  empty($_POST["password"])){
+
+if($_POST["password"] == $_POST["passconf"]){
+    if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["passconf"])){
+    
     $email = $_POST['email'];
     $password = $_POST['password'];
+}else{
+    echo "données manquantes.";
 }
-else{
-    echo "l'un des champs n'est pas rempli ou est erronée.";
+    
 }
 
-// Récupération des données soumises par le formulaire
+
+
+//Récupération des données soumises par le formulaire
 
 
 // Insertion des données dans la table appropriée
+
 $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$password')";
 
 if (mysqli_query($conn, $sql)) {
