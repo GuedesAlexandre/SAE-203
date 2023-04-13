@@ -27,7 +27,8 @@
 <?php
 //début du php
 // Connexion à la base de données
-$conn = mysqli_connect("localhost", "root", "root", "test");
+//mdp pour mac : root
+$conn = mysqli_connect("localhost", "root", "", "test");
 
 // Vérification de la connexion
 if (!$conn) {
