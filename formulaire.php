@@ -13,12 +13,7 @@
     <input type="password" name="password" placeholder="Password" class="form--input">
     <input type="password" name="passconf" placeholder="Confirm password" class="form--input">
     
-    <div class="form--marketing">
-        <input id="okayToEmail" type="checkbox">
-        <label for="okayToEmail" class="checkbox">
-          I want to join the newsletter
-        </label>
-    </div>
+  
     <button class="form--submit">
         Sign up
     </button>
@@ -28,6 +23,7 @@
 //début du php
 // Connexion à la base de données
 //mdp pour mac : root
+session_start();
 $conn = mysqli_connect("localhost", "root", "", "test");
 
 // Vérification de la connexion
@@ -37,9 +33,10 @@ if (!$conn) {
 
 if($_POST["password"] == $_POST["passconf"]){
     if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["passconf"])){
-    
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $_SESSION["email"] = $_POST["email"];
+    $_SESSION["password"] = $_POST["password"];
+    $email = $_SESSION['email'];
+    $password = $_SESSION['password'];
 }else{
     echo "données manquantes.";
    
