@@ -49,17 +49,24 @@ function hashtonmdp($password){
 
 session_start();
 $conn = mysqli_connect("localhost", "root", "root", "test");
-if(!empty($_POST["email"]) && !empty($_POST["password"])){
+if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]) && !empty($_POST["prenom"]) && !empty($_POST["birthday"]) && !empty($_POST["passconf"])){
     if (!$conn) {
         die("Connexion échouée : " . mysqli_connect_error());
     }
     
     if($_POST["password"] == $_POST["passconf"]){
-        if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["passconf"])){
+        if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["passconf"]) && !empty($_POST["birthday"]) && !empty($_POST["nom"]) && !empty($_POST["prenom"])){
         $_SESSION["email"] = $_POST["email"];
         $_SESSION["password"] = $_POST["password"];
+        $_SESSION["nom"] = $_POST["nom"];
+        $_SESSION["prenom"] = $_POST["prenom"];
+        $_SESSION["birthday"] = $_POST["birthday"];
+        
+        $prenom = $_SESSION['prenom'];
+        $nom= $_SESSION['nom'];
         $email = $_SESSION['email'];
         $password = $_SESSION['password'];
+        $birthday = $_SESSION['birthday'];
     }else{
         echo "données manquantes.";
        
@@ -74,7 +81,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
     
     // Insertion des données dans la table appropriée
     
-    $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', ' hash('sha256', $password)')";
+    $sql = "INSERT INTO utilisateurs (email,password,) VALUES ('$email', ' hash('sha256', $password)')";
     
     if (mysqli_query($conn, $sql)) {
         echo "Les données ont été enregistrées avec succès.";
