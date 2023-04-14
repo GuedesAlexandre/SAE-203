@@ -23,6 +23,7 @@
 //début du php
 // Connexion à la base de données
 //mdp pour mac : root
+//debut de session
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "test");
 
