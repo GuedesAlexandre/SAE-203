@@ -67,6 +67,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
         $email = $_SESSION['email'];
         $password = $_SESSION['password'];
         $birthday = $_SESSION['birthday'];
+        $passwordhash = hash('sha256', $password);
     }else{
         echo "données manquantes.";
        
@@ -81,7 +82,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
     
     // Insertion des données dans la table appropriée
     
-    $sql = "INSERT INTO utilisateurs (email,password,) VALUES ('$email', ' hash('sha256', $password)')";
+    $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$passwordhash');";
     
     if (mysqli_query($conn, $sql)) {
         echo "Les données ont été enregistrées avec succès.";
