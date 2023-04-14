@@ -35,47 +35,52 @@ function hashtonmdp($password){
 
 
     return array('motDePasse' => $motDePasseHache, 'sel' => $sel);
+ 
 }
-echo $motDePasseHache;
+
 
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "test");
-
-// Vérification de la connexion
-if (!$conn) {
-    die("Connexion échouée : " . mysqli_connect_error());
-}
-
-if($_POST["password"] == $_POST["passconf"]){
-    if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["passconf"])){
-    $_SESSION["email"] = $_POST["email"];
-    $_SESSION["password"] = $_POST["password"];
-    $email = $_SESSION['email'];
-    $password = $_SESSION['password'];
-}else{
-    echo "données manquantes.";
-   
-}
+$conn = mysqli_connect("localhost", "root", "root", "test");
+if(!empty($_POST["email"]) && !empty($_POST["password"])){
+    if (!$conn) {
+        die("Connexion échouée : " . mysqli_connect_error());
+    }
     
+    if($_POST["password"] == $_POST["passconf"]){
+        if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["passconf"])){
+        $_SESSION["email"] = $_POST["email"];
+        $_SESSION["password"] = $_POST["password"];
+        $email = $_SESSION['email'];
+        $password = $_SESSION['password'];
+    }else{
+        echo "données manquantes.";
+       
+    }
+        
+    }
+    
+    
+    
+    //Récupération des données soumises par le formulaire
+    
+    
+    // Insertion des données dans la table appropriée
+    
+    $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$password')";
+    
+    if (mysqli_query($conn, $sql)) {
+        echo "Les données ont été enregistrées avec succès.";
+    } else {
+        echo "Erreur : " . mysqli_error($conn);
+    }
+    
+    // Fermeture de la connexion à la base de données
+    mysqli_close($conn);
+    
+}else{
+    echo "Les champs sont vides";
 }
-
-
-
-//Récupération des données soumises par le formulaire
-
-
-// Insertion des données dans la table appropriée
-
-$sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$password')";
-
-if (mysqli_query($conn, $sql)) {
-    echo "Les données ont été enregistrées avec succès.";
-} else {
-    echo "Erreur : " . mysqli_error($conn);
-}
-
-// Fermeture de la connexion à la base de données
-mysqli_close($conn);
+// Vérification de la connexion
 
 
 ?>
