@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   list-style: none;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -15,9 +18,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 455px;
-  height: 532px;
+  height: max-content;
   border-radius: 30px;
+  padding: 25px 0 25px 0;
 }
 
 .form--input {
@@ -26,7 +31,7 @@ body {
   height: 50px;
   border: none;
   margin: 0 5px 0 5px;
-  padding-left: 5px;
+  padding-left: 8px;
   border: solid 1px #e4e4e4;
   border-radius: 9px;
   width: 100%;
@@ -39,6 +44,21 @@ body {
   border: none;
   border-radius: 8px;
   margin-top: 30px;
+  color: white;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -o-transition: .2s;
+}
+
+.form--submit:hover {
+  background-color: white;
+  border: 0.08em solid #4741DE;
+  color:black;
+  cursor: pointer;
 }
 
 .allform {
@@ -70,4 +90,16 @@ body {
 .passconf {
   display: flex;
   margin: 10px 0 10px 0;
+}
+
+.signup {
+  margin: 0 0 15px 0;
+}
+
+span a {
+  color: #4741DE;
+}
+
+span a:hover {
+  text-decoration: underline;
 }
