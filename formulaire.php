@@ -4,20 +4,28 @@
   <link href="css/formulaire.css" rel="stylesheet" />
 </head>
 <body>
-    <style>
-  
-    </style>
-<form class="form" action="formulaire.php " method="post">
-    <span class="signup">Sign Up</span>
-    <input type="email" name="email" placeholder="Email address" class="form--input">
-    <input type="password" name="password" placeholder="Password" class="form--input">
-    <input type="password" name="passconf" placeholder="Confirm password" class="form--input">
-    
-  
-    <button class="form--submit">
-        Sign up
-    </button>
-</form>
+
+    <form class="form" action="formulaire.php " method="post">
+        <span class="signup">Sign Up</span>
+        <div class="allform">
+            <div class="form-name">
+                <input type="text" name="prenom" placeholder="First Name" class="form--input" required>
+                <input type="text" class="form--input" name="nom" placeholder="Last Name" required>
+            </div>
+            <div class="form-mail">
+                <input type="date" class="form--input" name="birthday" placeholder="Birth Date" required>
+                <input type="email" name="email" placeholder="Email address" class="form--input" required>
+            </div>
+            <div class="form-pass">
+                <input type="password" name="password" placeholder="Password" class="form--input" required>
+            </div>
+            <div class="passconf">
+                <input type="password" name="passconf" placeholder="Confirm password" class="form--input" required>
+            </div>
+        </div>
+        
+        <input type="submit" class="form--submit" value="Sign up">
+    </form>
 
 <?php
 //début du php
