@@ -24,6 +24,19 @@
 // Connexion à la base de données
 //mdp pour mac : root
 //debut de session
+function hashtonmdp($password){
+    $sel = bin2hex(random_bytes(32));
+
+
+    $motDePasseSel = $motDePasse . $sel;
+
+
+    $motDePasseHache = hash('sha256', $motDePasseSel);
+
+
+    return array('motDePasse' => $motDePasseHache, 'sel' => $sel);
+}
+
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "test");
 
