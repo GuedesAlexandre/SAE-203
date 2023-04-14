@@ -66,7 +66,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
     
     // Insertion des données dans la table appropriée
     
-    $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$password')";
+    $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', ' hash('sha256', $password)')";
     
     if (mysqli_query($conn, $sql)) {
         echo "Les données ont été enregistrées avec succès.";
