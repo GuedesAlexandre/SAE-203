@@ -66,7 +66,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
     $sql = "SELECT * FROM utilisateurs WHERE email = '$emailuti' AND password = '$passwordverify' ";
     $result = $conn->query($sql);
     
-    if (mysqli_num_rows($result) ==1 ) {
+    if (mysqli_num_rows($result) == 1 ) {
       // L'utilisateur est connecté, on redirige vers une autre page
     echo "bienvenue";
     exit();
