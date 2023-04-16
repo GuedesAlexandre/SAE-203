@@ -1,11 +1,11 @@
 <html>
 <head>
-    <title>Formulaire</title>
+    <title>Connexion</title>
   <link href="css/formulaire.css" rel="stylesheet" />
 </head>
 <body>
 
-    <form class="form" action="connexion.php" method="post">
+    <form class="form" action="login.php" method="post">
         <span class="signup">Connexion</span>
         <div class="allform">
 
@@ -33,19 +33,21 @@
 
 session_start();
 $conn = mysqli_connect("localhost", "root", "root", "test");
+if (!$conn) {
+	die("La connexion a échoué : " . mysqli_connect_error());
+}
 if(!empty($_POST["email"]) && !empty($_POST["password"])){
-    if (!$conn) {
-        die("Connexion échouée : " . mysqli_connect_error());
-    }
-    
+   
    
         if(!empty($_POST["email"]) && !empty($_POST["password"]) ){
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $_SESSION["emailuti"] = $email;
-            $_SESSION["passworduti"] = $password;
+           
+           
+            $_SESSION["emailuti"] = $_POST['email'];
+            $_SESSION["passworduti"] = $_POST['password'];
+            $emailuti=$_SESSION["emailuti"];
+            $passworduti = $_SESSION["passworduti"] ;
             
-            
+            $passwordverify = hash('sha256', $passworduti);
             
     }else{
         echo "données manquantes.";
@@ -60,24 +62,25 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
     //require du fichier php qui try and catch
     
     // Insertion des données dans la table appropriée
-    
-    $sql = "SELECT * FROM utilisateurs WHERE email = '$email' AND password = '$password'";
+    if(!empty($emailuti) && !empty($passworduti)){
+    $sql = "SELECT * FROM utilisateurs WHERE email = '$emailuti' AND password = '$passwordverify' ";
     $result = $conn->query($sql);
     
-    if ($result->num_rows > 0) {
+    if (mysqli_num_rows($result) ==1 ) {
       // L'utilisateur est connecté, on redirige vers une autre page
-      header("Location: index.html");
+    echo "bienvenue";
+    exit();
     } else {
       // L'utilisateur n'a pas pu se connecter, on affiche un message d'erreur
       echo "Email ou mot de passe incorrect.";
     }
-    
+}
     // Fermeture de la connexion à la base de données
     $conn->close();
 
 // Vérification de la connexion
 
-
+    
 ?>
 </body>
 </html>

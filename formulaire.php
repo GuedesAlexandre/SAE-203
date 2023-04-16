@@ -73,7 +73,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
     $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$passwordhash');";
     
     if (mysqli_query($conn, $sql)) {
-        echo "Les données ont été enregistrées avec succès.";
+        header("location: login.php");
     } else {
         echo "Erreur : " . mysqli_error($conn);
     }
