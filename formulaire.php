@@ -64,6 +64,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
     
     if($_POST["password"] == $_POST["passconf"]){
         if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["passconf"]) && !empty($_POST["birthday"]) && !empty($_POST["nom"]) && !empty($_POST["prenom"])){
+            if(strlen($_POST["password"]) > 8 && ctype_upper($_POST["password"][0])){
         $_SESSION["email"] = $_POST["email"];
         $_SESSION["password"] = $_POST["password"];
         $_SESSION["nom"] = $_POST["nom"];
@@ -76,8 +77,26 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
         $password = $_SESSION['password'];
         $birthday = $_SESSION['birthday'];
         $passwordhash = hash('sha256', $password);
+          $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$passwordhash');";
+    
+    if (mysqli_query($conn, $sql)) {
+        header("location: login.php");
+    } else {
+        echo "Erreur : " . mysqli_error($conn);
+    }
+    
+    // Fermeture de la connexion à la base de données
+    mysqli_close($conn);
+    
+}else{
+    echo "Mot de passe incorrect";
+}
+            }else{
+                echo "les champs sont vides";
+            }
     }else{
         echo "données manquantes.";
+    
        
     }
         
@@ -90,20 +109,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
     
     // Insertion des données dans la table appropriée
     
-    $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$passwordhash');";
-    
-    if (mysqli_query($conn, $sql)) {
-        header("location: login.php");
-    } else {
-        echo "Erreur : " . mysqli_error($conn);
-    }
-    
-    // Fermeture de la connexion à la base de données
-    mysqli_close($conn);
-    
-}else{
-    echo "Les champs sont vides";
-}
+  
 // Vérification de la connexion
 
 session_destroy();
