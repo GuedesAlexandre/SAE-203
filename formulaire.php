@@ -56,7 +56,7 @@
 
 
 session_start();
-$conn = mysqli_connect("localhost", "root", "root", "test");
+$conn = mysqli_connect("localhost", "root", "root", "Matos");
 if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]) && !empty($_POST["prenom"]) && !empty($_POST["birthday"]) && !empty($_POST["passconf"])){
     if (!$conn) {
         die("Connexion échouée : " . mysqli_connect_error());
@@ -77,7 +77,8 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
         $password = $_SESSION['password'];
         $birthday = $_SESSION['birthday'];
         $passwordhash = hash('sha256', $password);
-          $sql = "INSERT INTO utilisateurs (email,password) VALUES ('$email', '$passwordhash');";
+        $IDE = random_int(25200,25700);
+          $sql = "INSERT INTO utilisateurs (Email,Password,Nom,Prenom,Birth,IDE) VALUES ('$email', '$passwordhash', '$nom', '$prenom', '$birthday',$IDE);";
     
     if (mysqli_query($conn, $sql)) {
         header("location: login.php");
