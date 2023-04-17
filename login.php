@@ -44,7 +44,7 @@
 
 
 session_start();
-$conn = mysqli_connect("localhost", "root", "root", "test");
+$conn = mysqli_connect("localhost", "root", "root", "Matos");
 if (!$conn) {
 	die("La connexion a échoué : " . mysqli_connect_error());
 }
