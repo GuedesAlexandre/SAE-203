@@ -6,8 +6,8 @@
 <body>
     <?php
     // Récupération des données soumises par le formulaire de connexion
-$email = $_POST['email'];
-$motDePasse = $_POST['mot_de_passe'];
+$email = $_SESSION['email'];
+$motDePasse = $_SESSION['mot_de_passe'];
 
 // Recherche de l'utilisateur dans la base de données
 $sql = "SELECT * FROM utilisateurs WHERE email='$email'";
@@ -18,7 +18,7 @@ if (mysqli_num_rows($resultat) == 1) {
     $utilisateur = mysqli_fetch_assoc($resultat);
 
     // Vérification du mot de passe
-    if (password_verify($motDePasse, $utilisateur['mot_de_passe'])) {
+    if (password_verify($motDePasse, $utilisateur['password'])) {
         // Le mot de passe est correct, vérification du rôle
         if ($utilisateur['role'] == 'admin') {
             // L'utilisateur est administrateur
