@@ -5,6 +5,18 @@
 </head>
 <body>
 
+    <header>
+        <nav class="navbar">
+            <div class="navlinks">
+                <ul>
+                    <a href="#"><li>About</li></a>
+                    <a href="#"><li class="logo">MATOS</li></a>
+                    <a href="#"><li>Contact</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <form class="form" action="login.php" method="post">
         <span class="signup">Connexion</span>
         <div class="allform">
@@ -16,10 +28,10 @@
             <div class="form-pass">
                 <input type="password" name="password" placeholder="Password" class="form--input" required>
             </div>
-          
         </div>
         
         <input type="submit" class="form--submit" value="Sign up">
+        <span class="link">Pas de compte ? <a href="#">Inscrivez-vous !</a></span>
     </form>
 
 <?php
