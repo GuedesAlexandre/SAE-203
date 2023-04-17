@@ -18,7 +18,7 @@
     </header>
 
     <form class="form" action="login.php" method="post">
-        <span class="signup">Connexion</span>
+        <h2 class="signup">Log In</h2>
         <div class="allform">
 
             <div class="form-mail">
