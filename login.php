@@ -30,8 +30,8 @@
             </div>
         </div>
         
-        <input type="submit" class="form--submit" value="Sign up">
-        <span class="link">Pas de compte ? <a href="#">Inscrivez-vous !</a></span>
+        <input type="submit" class="form--submit" value="Sign up" href="#">
+        <span class="link">Pas de compte ? <a href="formulaire.php">Inscrivez-vous !</a></span>
     </form>
 
 <?php
