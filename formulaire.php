@@ -14,7 +14,7 @@
             <div class="navlinks">
                 <ul>
                     <a href="#"><li>About</li></a>
-                    <a href="#"><li class="logo">MATOS</li></a>
+                    <a href="index.html"><li class="logo">MATOS</li></a>
                     <a href="#"><li>Contact</li></a>
                 </ul>
             </div>
@@ -106,7 +106,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
 }
 // Vérification de la connexion
 
-
+session_destroy();
 ?>
 </body>
 </html>
