@@ -137,6 +137,7 @@ body {
 
 span a {
     color: #4741DE;
+    font-style: italic;
 }
 
 span a:hover {
