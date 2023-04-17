@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url(../img/background.png);
+    scroll-behavior: smooth;
+}
+
+.navlinks {
+    width: 100%;
+    height: 65px;
+}
+  
+.navlinks ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+}
+  
+.navlinks ul a li {
+    color: white;
+    padding: 25px;
+    font-family: "Poppins", sans-serif;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.logo {
+    font-size: xxx-large;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.logo:hover {
+    color: #4741de;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.navbar .navlinks ul a li:hover {
+    color: #4741de;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.form {
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 455px;
+    height: max-content;
+    border-radius: 30px;
+    padding: 25px 0 25px 0;
+    margin: 100px auto;
+}
+
+.form--input {
+    background-color: black;
+    color: white;
+    height: 50px;
+    border: none;
+    margin: 0 5px 0 5px;
+    padding-left: 8px;
+    border: solid 1px #e4e4e4;
+    border-radius: 9px;
+    width: 100%;
+}
+.form--txt-area {
+    background-color: black;
+    color: white;
+    /* height: 50px; */
+    border: none;
+    margin: 0 5px 0 5px;
+    padding-left: 8px;
+    padding-top: 10px;
+    border: solid 1px #e4e4e4;
+    border-radius: 9px;
+    width: 100%;
+}
+
+.form--submit {
+    background-color: #4741DE;
+    width: 90%;
+    padding: 10 0 10 0;
+    border: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+}
+
+.form--submit:hover {
+    background-color: white;
+    border: 0.08em solid #4741DE;
+    color:black;
+    cursor: pointer;
+}
+
+.allform {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.form-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin: 10px 0 10px 0;
+}
+
+.form-mail {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin: 10px 0 10px 0;
+}
+
+.form-pass {
+    display: flex;
+    margin: 10px 0 10px 0;
+    justify-content: stretch;
+}
+
+.passconf {
+    display: flex;
+    margin: 10px 0 10px 0;
+}
+
+.signup {
+    margin: 0 0 15px 0;
+}
+
+span a {
+    color: #4741DE;
+    font-style: italic;
+}
+
+span a:hover {
+    text-decoration: underline;
+}
