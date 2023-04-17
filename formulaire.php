@@ -1,31 +1,51 @@
 <html>
 <head>
     <title>Formulaire</title>
-  <link href="css/formulaire.css" rel="stylesheet" />
+    <link href="css/formulaire.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-    <form class="form" action="formulaire.php " method="post">
-        <span class="signup">Sign Up</span>
-        <div class="allform">
-            <div class="form-name">
-                <input type="text" name="prenom" placeholder="First Name" class="form--input" required>
-                <input type="text" class="form--input" name="nom" placeholder="Last Name" required>
+    <header>
+        <nav class="navbar">
+            <div class="navlinks">
+                <ul>
+                    <a href="#"><li>About</li></a>
+                    <a href="#"><li class="logo">MATOS</li></a>
+                    <a href="#"><li>Contact</li></a>
+                </ul>
             </div>
-            <div class="form-mail">
-                <input type="date" class="form--input" name="birthday" placeholder="Birth Date" required>
-                <input type="email" name="email" placeholder="Email address" class="form--input" required>
+        </nav>
+    </header>
+
+    <main>
+        <form class="form" action="formulaire.php " method="post">
+            <h2 class="signup">Sign Up</h2>
+            <div class="allform">
+                <div class="form-name">
+                    <input type="text" name="prenom" placeholder="First Name" class="form--input" required>
+                    <input type="text" class="form--input" name="nom" placeholder="Last Name" required>
+                </div>
+                <div class="form-mail">
+                    <input type="date" class="form--input" name="birthday" placeholder="Birth Date" required>
+                    <input type="email" name="email" placeholder="Email address" class="form--input" required>
+                </div>
+                <div class="form-pass">
+                    <input type="password" name="password" placeholder="Password" class="form--input" required>
+                </div>
+                <div class="passconf">
+                    <input type="password" name="passconf" placeholder="Confirm password" class="form--input" required>
+                </div>
             </div>
-            <div class="form-pass">
-                <input type="password" name="password" placeholder="Password" class="form--input" required>
-            </div>
-            <div class="passconf">
-                <input type="password" name="passconf" placeholder="Confirm password" class="form--input" required>
-            </div>
-        </div>
-        
-        <input type="submit" class="form--submit" value="Sign up">
-    </form>
+            
+            <input type="submit" class="form--submit" value="Sign up">
+
+            <span class="link">Déjà un compte ? <a href="#">Connecter vous !</a></span>
+        </form>
+    </main>
 
 <?php
 //début du php
