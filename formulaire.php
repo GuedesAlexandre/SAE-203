@@ -89,7 +89,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
     mysqli_close($conn);
     
 }else{
-    echo "Mot de passe incorrect";
+    echo "<span>Mot de passe incorrect</span>";
 }
             }else{
                 echo "les champs sont vides";
