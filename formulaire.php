@@ -43,7 +43,7 @@
             
             <input type="submit" class="form--submit" value="Sign up">
 
-            <span class="link">Déjà un compte ? <a href="#">Connectez vous !</a></span>
+            <span class="link">Déjà un compte ? <a href="login.php">Connectez vous !</a></span>
         </form>
     </main>
 

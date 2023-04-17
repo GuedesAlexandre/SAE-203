@@ -18,7 +18,7 @@
     </header>
 
     <form class="form" action="login.php" method="post">
-        <span class="signup">Connexion</span>
+        <h2 class="signup">Log In</h2>
         <div class="allform">
 
             <div class="form-mail">
@@ -30,8 +30,8 @@
             </div>
         </div>
         
-        <input type="submit" class="form--submit" value="Sign up">
-        <span class="link">Pas de compte ? <a href="#">Inscrivez-vous !</a></span>
+        <input type="submit" class="form--submit" value="Sign up" href="#">
+        <span class="link">Pas de compte ? <a href="formulaire.php">Inscrivez-vous !</a></span>
     </form>
 
 <?php
