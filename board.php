@@ -9,7 +9,7 @@
 session_start();
 
 if (isset($_SESSION['email'])) {
-  echo "Bienvenue " . $_SESSION['email'];
+  echo "Bienvenue " . $_SESSION['email'] . $_SESSION['IDE'];
 } else {
   header("Location: login.php");
 }
