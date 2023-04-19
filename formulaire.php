@@ -78,10 +78,12 @@ if(!empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["nom"]
         $birthday = $_SESSION['birthday'];
         $passwordhash = hash('sha256', $password);
         $IDE = random_int(25200,25700);
+
           $sql = "INSERT INTO utilisateurs (Email,Password,Nom,Prenom,Birth,IDE) VALUES ('$email', '$passwordhash', '$nom', '$prenom', '$birthday',$IDE);";
     
     if (mysqli_query($conn, $sql)) {
         header("location: login.php");
+        $_SESSION["IDE"] = $IDE;
     } else {
         echo "Erreur : " . mysqli_error($conn);
     }

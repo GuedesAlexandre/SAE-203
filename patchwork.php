@@ -4,6 +4,7 @@
 
 </head>
 <body>
+    
     <?php
     // Récupération des données soumises par le formulaire de connexion
 $email = $_SESSION['email'];
@@ -35,6 +36,24 @@ if (mysqli_num_rows($resultat) == 1) {
     // L'utilisateur n'a pas été trouvé dans la base de données
     echo "Adresse email incorrecte.";
 }
+
+//pour envoie de mail
+$to = $_POST['email'];
+$subject = "Email Subject";
+
+$message = 'Dear '.$_POST['name'].',<br>';
+$message .= "We welcome you to be part of family<br><br>";
+$message .= "Regards,<br>";
+
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+$headers .= 'From: <enquiry@example.com>' . "\r\n";
+$headers .= 'Cc: myboss@example.com' . "\r\n";
+
+mail($to,$subject,$message,$headers);
 
 // Fermeture de la connexion à la base de données
 mysqli_close($conn);
