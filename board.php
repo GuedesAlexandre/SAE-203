@@ -4,7 +4,7 @@
   <link href="css/formulaire.css" rel="stylesheet" />
 </head>
 <body>
-
+<a href="déconnexion.php"><button>déconnecte toi mon reuf</button></a>
 <?php
 
 
