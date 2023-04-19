@@ -4,6 +4,7 @@
 
 </head>
 <body>
+    
     <?php
     // Récupération des données soumises par le formulaire de connexion
 $email = $_SESSION['email'];
