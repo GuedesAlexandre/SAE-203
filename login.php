@@ -81,7 +81,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
     if (mysqli_num_rows($result) == 1 ) {
       // L'utilisateur est connecté, on redirige vers une autre page
       
-    echo "bienvenue";
+        header("Location: board.php");
     exit();
     } else {
       // L'utilisateur n'a pas pu se connecter, on affiche un message d'erreur
