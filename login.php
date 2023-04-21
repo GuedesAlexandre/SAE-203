@@ -68,8 +68,6 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
         
     }
     
-    
-    
     //Récupération des données soumises par le formulaire
     //require du fichier php qui try and catch
     
