@@ -156,8 +156,7 @@ if(isset($_POST["verif"])){
         $ID = mysqli_fetch_assoc($recupid);
         $IDEINRUN = $IDE["IDE"];
         $IDINRUN = $ID["ID"];
-
-
+    
 
         $sqlupdatestatut = " UPDATE Emprunt SET statut = statut + 1  WHERE statut = 0 ;";
         if(mysqli_query($conn, $sqlupdatestatut)){
