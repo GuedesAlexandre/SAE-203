@@ -129,12 +129,12 @@ $sql = "SELECT IDE,Prenom FROM utilisateurs WHERE email='$emailuti'";
 
 
         }else{
-            'champs manquants';
+            'marche pas';
         }
 
 
  }else{
-        echo "problème";
+        echo "produits indisponible";
     }
 
 
