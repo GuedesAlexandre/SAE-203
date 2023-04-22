@@ -129,7 +129,7 @@ $sql = "SELECT IDE,Prenom FROM utilisateurs WHERE email='$emailuti'";
 
 
         }else{
-            'marche pas';
+         echo   'marche pas';
         }
 
 
