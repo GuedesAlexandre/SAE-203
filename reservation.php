@@ -33,8 +33,8 @@
                     <option value="3">Ta grand mère</option>
                 </select>
                 <div class="form-date">
-                    <input type="date" name="start" placeholder="Start date" required>
-                    <input type="date" name="end" placeholder="End date" required>
+                    <input type="datetime" name="start" placeholder="Start date" required>
+                    <input type="datetime" name="end" placeholder="End date" required>
                 </div>
                 <div class="comments">
                     <textarea name="commentaire" cols="30" rows="10" placeholder="Comments..."></textarea>
