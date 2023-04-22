@@ -23,17 +23,17 @@ session_start();
 
 
 // Connexion à la base de données
-$conn2 = mysqli_connect("localhost", "root", "root", "Matos");
+$conn = mysqli_connect("localhost", "root", "root", "Matos");
 
 // Vérifier si la connexion est établie
-if (!$conn2) {
+if (!$conn) {
     die("Connexion échouée: " . mysqli_connect_error());
 }
 
 // Requête SQL pour sélectionner les noms de matériels
 $sql2 = "SELECT nom FROM materiels";
 
-$resultat = mysqli_query($conn2, $sql2);
+$resultat = mysqli_query($conn, $sql2);
 
 // Vérifier si la requête a retourné des résultats
 if (mysqli_num_rows($resultat) > 0) {
@@ -103,25 +103,68 @@ $sql = "SELECT IDE,Prenom FROM utilisateurs WHERE email='$emailuti'";
     $mat = $_SESSION["materiels"];
     $debut = $_SESSION["debut"];
     $fin = $_SESSION["fin"];
-    
+    $comment= $_SESSION["commentaire"];
+    //récupération de la date local
+    $date = date("Y-m-d H:i:s");
+
     //requête pour récupérer l'id et la quantité
     $sqlMATID ="SELECT ID FROM Materiels WHERE nom ='$mat'";
     $sqlMATQ ="SELECT Quantité FROM Materiels WHERE nom ='$mat'";
     $resultMATQ = mysqli_query($conn, $sqlMATQ);
     $resultMATID = mysqli_query($conn, $sqlMATID);
-    if(mysql_num_rows($resultMATQ) == 1 && mysql_num_rows($resultMATID) ==1){
+    if(mysqli_num_rows($resultMATQ) == 1 && mysqli_num_rows($resultMATID) ==1){
         $IDMAT = mysqli_fetch_assoc($resultMATID);
         $quantMAT = mysqli_fetch_assoc($resultMATQ);
+        $idmateriels = $IDMAT["ID"];
+        $quantité = $quantMAT["Quantité"];
     }
+
     if($quantMAT > 0){
-        $sqlReserv = "INSERT INTO";
+        $sqlReserv = "INSERT INTO Emprunt (IDE,ID,DateDebut,DateFin)
+        VALUES ('$IDE', '$idmateriels', '$debut', '$fin');";
+
+        if( mysqli_query($conn, $sqlReserv)){
+            echo "votre demande à été envoyé";
+
+
+
+        }else{
+            'champs manquants';
+        }
+
+
+    }else{
+        echo "problème";
     }
-     
+
 
     }
-    
+
 }
+echo "<form action='test.php' method='post'>
+<input type='submit' name='verif'>
+</form>";
+if(isset($_POST["verif"])){
+    $sql_verif_materiels = "SELECT * FROM Emprunt WHERE statut = 0;";
+    if(mysqli_query($conn, $sql_verif_materiels)){
+        $Emprows = mysqli_fetch_assoc($sql_verif_materiels);
+        $IDEencours = $Emprows["IDE"];
+        $IDencours = $Emprows["ID"];
+        $accept = 1;
+$sqlaccept =  "UPDATE Emprunt SET statut = '$accept' WHERE IDE  = '$IDEencours' AND ID = '$IDencours'  ;";
+        if(mysqli_query($conn, $sqlaccept)){
+            echo "materiels réservé";
+            $sqlgestquant = "UPDATE Materiels SET Quantité = Quantité - 1 WHERE IDE ='$IDEencours' AND ID = '$IDencours';";
+            if(mysqli_query($conn, $sqlgestquant)){
+                echo"quantité-1";
+            }
+        }
+}
+
+}
+
 // Fermer la connexion
+
 mysqli_close($conn);
 
 ?>
