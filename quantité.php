@@ -3,42 +3,38 @@
 </head>
 <body>
 <?php
+$conn = mysqli_connect("localhost", "root", "root", "Matos");
 
+// Vérifier si la connexion est établie
+if (!$conn) {
+    die("Connexion échouée: " . mysqli_connect_error());
+}
 
 // Établir une connexion avec votre base de données
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "Matos";
+$sqlselquant = "SELECT ID FROM Emprunt WHERE statut != 1;";
+$sqlselquantresult =mysqli_query($conn, $sqlselquant);
+if(mysqli_num_rows($sqlselquantresult) == 1){
+    $IDMATquantité = mysqli_fetch_assoc($sqlselquantresult);
+    $IDMATquantitégest = $IDMATquantité["ID"];
+    $sqlupdatequantité = "UPDATE Materiels SET Quantité = Quantité-1 WHERE Quantité > 0 AND ID = '$IDMATquantitégest';";
+    if(mysqli_query($conn, $sqlupdatequantité)){
+        echo"quantité c'est bon";
+        $statutvalid = 1;
+        $sqlgeststatut ="UPDATE Emprunt SET statut = '$statutvalid' WHERE statut = 0;";
+        if(mysqli_query($conn, $sqlgeststatut)){
+            header('location: test.php');
+        }else{
+            echo"marche pas";
+        }
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Vérifier si la connexion a réussi
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Récupérer toutes les données de la table contenant les quantités
-$sql = "SELECT * FROM Materiels";
-$result = $conn->query($sql);
-
-// Créer le tableau associatif avec les ID en colonnes et les quantités en lignes
-$tableau_assoc = array();
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $id = $row["ID"]; // l'ID se trouve dans la colonne "ID"
-        $quantite = $row["Quantité"]; // la quantité se trouve dans la colonne "quantite"
-        $tableau_assoc[$id] = $quantite; // stocker la quantité dans le tableau associatif avec l'ID comme clé
+    }else{
+        echo "marche pas";
     }
+
+
+} else {
+    echo "vide";
 }
-
-// Afficher le tableau associatif pour vérification
-
-echo $tableau_assoc["256789"];
-
-
-// Fermer la connexion avec votre base de données
-$conn->close();
 ?>
 
 

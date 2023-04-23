@@ -114,6 +114,7 @@ if (
         $sqlMATQ = "SELECT Quantité FROM Materiels WHERE nom ='$mat'";
         $resultMATQ = mysqli_query($conn, $sqlMATQ);
         $resultMATID = mysqli_query($conn, $sqlMATID);
+    }
         if (
             mysqli_num_rows($resultMATQ) == 1 &&
             mysqli_num_rows($resultMATID) == 1
@@ -124,20 +125,27 @@ if (
             $quantité = $quantMAT["Quantité"];
         }
 
-        if ($quantMAT > 0) {
+        if ($quantMAT > 0 && $date<=$debut){
+
             $sqlReserv = "INSERT INTO Emprunt (IDE,ID,DateDebut,DateFin)
         VALUES ('$IDE', '$idmateriels', '$debut', '$fin');";
 
             if (mysqli_query($conn, $sqlReserv)) {
                 echo "votre demande à été envoyé";
+                echo "<a href='quantité.php'><button>ADMIN</button></a>";
+
             } else {
-                echo "marche pas";
+                echo "produits indisponible";
             }
-        } else {
-            echo "produits indisponible";
+        }else{
+            echo "date ou quantité indisponible";
         }
-    }
+
+}else{
+    echo "champs manquants";
 }
+//gest statut et quantité;
+
 
 // Fermer la connexion
 
