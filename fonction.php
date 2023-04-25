@@ -7,6 +7,31 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+    function AjoutMateriel(){
+    if(!empty($_POST["Nom"]) && !empty($_POST["Type"]) && !empty($_POST["Quantité"]) && !empty($_POST["description"])){
+        $quantité = $_POST["Quantité"];
+        $Nom = $_POST["Nom"];
+        $Type = $_POST["Type"];
+        $Description = $_POST["description"];
+        $conn = mysqli_connect("localhost", "root", "root", "Matos");
+        if (!$conn) {
+            die("La connexion a échoué : " . mysqli_connect_error());
+        }
+        while($quantité!=0){
+            $ID = random_int(27000,28000);
+            $quantfixe = 1;
+            $sqlajout = "INSERT INTO Materiels (ID,Nom,Type,Quantité,Description) VALUES ('$ID','$Nom','$Type',$quantfixe,'$description');";
+            if(mysqli_query($conn,$sqlajout)){
+                $quantité = $quantité - 1;
+            }
+
+        }
+    }
     
+
+
+}
+?>
 </body>
 </html>
