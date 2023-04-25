@@ -8,13 +8,13 @@
 </head>
 <body>
     <?php
+    $conn = mysqli_connect("localhost", "root", "root", "Matos");
     function AjoutMateriel(){
     if(!empty($_POST["Nom"]) && !empty($_POST["Type"]) && !empty($_POST["Quantité"]) && !empty($_POST["description"])){
         $quantité = $_POST["Quantité"];
         $Nom = $_POST["Nom"];
         $Type = $_POST["Type"];
         $Description = $_POST["description"];
-        $conn = mysqli_connect("localhost", "root", "root", "Matos");
         if (!$conn) {
             die("La connexion a échoué : " . mysqli_connect_error());
         }
