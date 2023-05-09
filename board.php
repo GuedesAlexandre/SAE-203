@@ -5,7 +5,7 @@
 </head>
 <body>
 <a href="déconnexion.php"><button>déconnecte toi mon reuf</button></a>
-<a href="test.php"><button>déconnecte toi mon reuf</button></a>
+<a href="reservation.php"><button>déconnecte toi mon reuf</button></a>
 <?php
 
 
