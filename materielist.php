@@ -12,9 +12,7 @@
     <i class="fas fa-search"></i>
 
 </div>
-<a href="https://www.youtube.com/c/ShortCode" target="_blank" id="ytb">
-<i class="fab fa-youtube"> </i>
-</a>
+
     <div class="container">
         <div class="box">
         <h2></h2>
