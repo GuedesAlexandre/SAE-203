@@ -56,7 +56,7 @@ if (mysqli_num_rows($resultat) > 0) {
     echo '
    <main>
    <div class="containform">
-            <form class="form" action="test.php" method="post">
+            <form class="form" action="reservation.php" method="post">
                 <h2>RESERVATION OF EQUIPMENTS</h2>
   <select name="equipement">';
     while ($row = mysqli_fetch_assoc($resultat)) {
@@ -144,7 +144,7 @@ if (
         if ($quantMAT > 0 && $date<=$debut){
 
             $sqlReserv = "INSERT INTO Emprunt (IDE,ID,DateDebut,DateFin)
-        VALUES ('$IDE', '$idmateriels', '$debut', '$fin');";
+            VALUES ('$IDE', '$idmateriels', '$debut', '$fin');";
 
             if (mysqli_query($conn, $sqlReserv)) {
                 echo "votre demande à été envoyé";
