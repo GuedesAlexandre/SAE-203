@@ -11,7 +11,7 @@ $conn =  mysqli_connect("localhost", "root", "root", "Matos");
 if (!$conn) {
     die("Connexion échouée: " . mysqli_connect_error());
 }
-echo "<form action='test.php' method='post'>
+echo "<form action='quantité.php' method='post'>
 <input type='submit' name='verif'>
 </form>";
 if(isset($_POST["verif"])){
