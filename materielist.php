@@ -7,9 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
 </head>
 <body>
-<header>
-
-</header>
+ <header>
+        <nav class="navbar">
+            <span class="logo">MATOS</span>
+            <div class="navlinks">
+                <span class="elt">Accueil</span>
+                <span class="elt">Réservations</span>
+                <div class="ligne"></div>
+                <ion-icon name="person" class="elt"></ion-icon>
+            </div>
+        </nav>
+    </header>
 <div id="search">
 
 <input type="search" placeholder="search" class="searchbar">
@@ -62,5 +70,7 @@
     ?>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
