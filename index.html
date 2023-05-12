@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <title>MATOS</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
+
 <body>
 
   <header>
-  <!-- Ajout d'une navbar !-->
-    <nav class="navbar">
+    <!-- Ajout d'une navbar !-->
+    <nav class="navbar" id="navbar">
       <div class="navlinks">
         <ul>
-          <a href="#"><li>About</li></a>
-          <a href="index.html"><li class="logo">MATOS</li></a>
-          <a href="#"><li>Contact</li></a>
+          <a href="#about">
+            <li>About</li>
+          </a>
+          <a href="index.html">
+            <li class="logo">MATOS</li>
+          </a>
+          <a href="#form">
+            <li>Contact</li>
+          </a>
         </ul>
       </div>
     </nav>
@@ -34,13 +43,59 @@
       <a href="login.php"><button><span>Connectez vous !</span></button></a>
     </div>
 
+
+    <h1 class="abt" id="about">About Us</h1>
     <div class="About">
-      <img src="#" alt="">
-      <img src="#" alt="">
-      <img src="#" alt="">
-    </div>
+      <div class="img">
+
+        <div class="img1">
+          <img id="about" src="./img/Arnaud.png" alt="Arnaud">
+          <span>Arnaud Royer<br>Graphiste et Développeur Front </span>
+        </div>
+
+        <div class="img1">
+          <img src="./img/Alexandre.png" alt="Alexandre">
+          <span>Alexandre Guedes<br>Chef de projet et Dévéloppeur Back</span>
+        </div>
+
+        <div class="img1">
+          <img src="./img/Steven.png" alt="Steven">
+          <span>Steven Le Cam<br>Dévéloppeur Front et Graphiste</span>
+        </div>
+      </div>
+
+
+      <form class="form" id="form" action="formulaire.php " method="post">
+        <h2 class="signup">Contact Us</h2>
+        <div class="allform">
+          <div class="form-name">
+            <input type="text" name="prenom" placeholder="First Name" class="form--input" required>
+
+          </div>
+          <div class="form-mail">
+
+            <input type="email" name="email" placeholder="Email address" class="form--input" required>
+          </div>
+          <div class="form-pass">
+            <input type="text" name="object" placeholder="Object :" class="form--input" required>
+          </div>
+          <div class="passconf">
+
+            <textarea class="form--txt-area" name="Comment" cols="20" rows="10" placeholder="Comment :"></textarea>
+
+          </div>
+        </div>
+
+        <input class="send" type="submit" class="form--submit" value="Send">
+
+
+      </form>
+
+
+
   </main>
-  
+  <a href="#navbar"><i class="ri-arrow-up-line"></i></a>
 
 </body>
+
 </html>

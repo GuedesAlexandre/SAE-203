@@ -9,7 +9,9 @@
 
 body {
   background-image: url(../img/background.png);
-  scroll-behavior: smooth;
+}
+html{
+    scroll-behavior: smooth;
 }
 
 .navlinks {
@@ -95,3 +97,189 @@ button:hover {
     color:black;
     cursor: pointer;
 }
+.About{
+    justify-content: center;
+    text-align: center;
+   
+}
+.abt{
+    margin-top: 400px;
+    margin-bottom: 180px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 70px;
+    color: white;
+}
+.img{
+   
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.img1 {
+    font-family: 'Poppins';
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 220px;
+    
+}
+span{
+    margin-top: 20px;
+}
+
+.form {
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 455px;
+    height: max-content;
+    border-radius: 30px;
+    padding: 25px 0 25px 0;
+    margin: 100px auto;
+    margin-top: 270px;
+    margin-bottom: 250px;
+   
+}
+
+.form--input {
+    background-color: black;
+    color: white;
+    height: 50px;
+    border: none;
+    margin: 0 5px 0 5px;
+    padding-left: 8px;
+    border: solid 1px #e4e4e4;
+    border-radius: 9px;
+    width: 100%;
+}
+.form--txt-area {
+    background-color: black;
+    color: white;
+    /* height: 50px; */
+    border: none;
+    margin: 0 5px 0 5px;
+    padding-left: 8px;
+    padding-top: 10px;
+    border: solid 1px #e4e4e4;
+    border-radius: 9px;
+    width: 100%;
+}
+
+.form--submit {
+    background-color: #4741DE;
+    width: 90%;
+    padding: 10 0 10 0;
+    border: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+}
+
+.form--submit:hover {
+    background-color: white;
+    border: 0.08em solid #4741DE;
+    color:black;
+    cursor: pointer;
+}
+
+.allform {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.form-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin: 10px 0 10px 0;
+}
+
+.form-mail {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin: 10px 0 10px 0;
+}
+
+.form-pass {
+    display: flex;
+    margin: 10px 0 10px 0;
+    justify-content: stretch;
+}
+
+.passconf {
+    display: flex;
+    margin: 10px 0 10px 0;
+}
+
+.signup {
+    margin: 0 0 15px 0;
+    font-family: 'Poppins';
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+span a {
+    color: #4741DE;
+    font-style: italic;
+}
+
+span a:hover {
+    text-decoration: underline;
+}
+.send{
+    width: 400px;
+    height: 50px;
+    font-family: 'Poppins';
+    font-size: 20px;
+    color: white;
+    background-color: #4741de;
+    border-radius: 7px;
+    border: 0.08em solid white;
+    margin-top: 15px;
+    transition: .2s;
+    cursor: pointer;
+
+    
+}
+.send:hover{
+    background-color: white;
+    border-color:#4741de;
+    color:black;
+    cursor: pointer;
+}
+.arrow-up-outline{
+    width: 50px;
+    height:50px;
+}
+.ri-arrow-up-line{
+    font-size: 50px;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    color: white;
+}
+.ri-arrow-up-line:hover{
+    cursor: pointer;
+    color:#000000;
+    transform: scale(1.5);
+
+}
+
