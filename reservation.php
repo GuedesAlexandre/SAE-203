@@ -5,17 +5,20 @@
 
 </head>
 <body>
- <header>
+    <header>
         <nav class="navbar">
+            <span class="logo">MATOS</span>
             <div class="navlinks">
-                <ul>
-                    <a href="#"><li>About</li></a>
-                    <a href="#"><li class="logo">MATOS</li></a>
-                    <a href="#"><li>Contact</li></a>
-                </ul>
+                <span class="elt">Accueil</span>
+                <span class="elt">Réservations</span>
+                <div class="ligne"></div>
+                <ion-icon name="person" class="elt"></ion-icon>
             </div>
         </nav>
     </header>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <?php
 session_start();
@@ -40,13 +43,15 @@ if (mysqli_num_rows($resultat) > 0) {
     echo '
    <main>
    <div class="containform">
-            <form class="form" action="test.php" method="post">
-                <h2>RESERVATION OF EQUIPMENTS</h2>
+            <form class="form" action="reservation.php" method="post">
+                <h2>Réservation</h2>
+                <div class="ligne2"></div>
   <select name="equipement">';
     while ($row = mysqli_fetch_assoc($resultat)) {
         echo '<option value="' . $row["nom"] . '">' . $row["nom"] . "</option>";
     }
     echo "</select>";
+
     echo ' <div class="form-date">
                     <input type="datetime-local" name="start" placeholder="Start date" required>
                     <input type="datetime-local" name="end" placeholder="End date" required>
@@ -54,23 +59,10 @@ if (mysqli_num_rows($resultat) > 0) {
                 <div class="comments">
                     <textarea name="commentaire" cols="30" rows="10" placeholder="Comments..."></textarea>
                 </div>
-                <div class="btn">
-                    <input type="submit" value="SUBMIT">
+                <div class="btndiv">
+                    <input type="submit" value="SUBMIT" class="btn">
                 </div>
             </form>
-        </div>
-
-        <div class="container">
-           <h2>HOW TO USE ?</h2>
-            <div class="description">
-                <ul>
-                    <li>1. SELECT THE EQUIPMENTS</li>
-                    <li>2. ENTER A START DATE</li>
-                    <li>3. ENTER A END DATE</li>
-                    <li>4. PUT A COMMENT ON HOW YOU WOULD LIKE TO USE THIS MATERIAL</li>
-                    <li>5. SEND THE FORM</li>
-                </ul>
-           </div>
         </div>
     </main>';
 } else {
