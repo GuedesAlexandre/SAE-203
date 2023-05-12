@@ -219,6 +219,7 @@ select {
 footer {
     background-color: #4741DE;
     padding: 25px 25px 0 25px;
+    bottom: 0;
 }
 
 .foot {
