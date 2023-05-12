@@ -37,7 +37,7 @@
 session_start();
 
 // Connexion à la base de données
-$conn = mysqli_connect("localhost", "root", "", "Matos");
+$conn = mysqli_connect("localhost", "root", "root", "Matos");
 
 // Vérifier si la connexion est établie
 if (!$conn) {
@@ -46,7 +46,7 @@ if (!$conn) {
 
 $emailuti = $_SESSION["emailuti"];
 
-$conn = mysqli_connect("localhost", "root", "", "Matos");
+$conn = mysqli_connect("localhost", "root", "root", "Matos");
 if (!$conn) {
     die("La connexion a échoué : " . mysqli_connect_error());
 }
@@ -104,7 +104,7 @@ if (
 ) {
     $emailuti = $_SESSION["emailuti"];
 
-    $conn = mysqli_connect("localhost", "root", "", "Matos");
+    $conn = mysqli_connect("localhost", "root", "root", "Matos");
     if (!$conn) {
         die("La connexion a échoué : " . mysqli_connect_error());
     }
