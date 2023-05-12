@@ -38,14 +38,16 @@
     if(mysqli_query($conn,$sql)){
         $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result) >1 ){
-
+            echo '<div class="container">';
             while($mat =mysqli_fetch_assoc($result)){
-                echo '<div class="container">';
+
                 echo' <div class="box">';
                 echo' <h2>'.$mat["Nom"].'</h2>';
                 echo '<p>'.$mat["Description"].'</p>';
                 echo '<span>'.$mat["Quantité"].'</span>';
                 echo'</div>';
+                echo"<br>"; 
+
 
             }
 
@@ -53,9 +55,10 @@
 
 
 
-        }echo 'ptn de php qui me saoule';
+        }
 
     }
+    echo"</div>";
     ?>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

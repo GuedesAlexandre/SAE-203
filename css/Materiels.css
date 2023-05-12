@@ -31,7 +31,7 @@
 .container{
     margin-top:150px;
 
-    height:200vh;
+    height:1080px;;
     display:flex;
     justify-content: center;
 align-items:center;
@@ -45,6 +45,6 @@ align-items:center;
     background-color:grey;
     padding:12px;
     height:20vh;
-    margin-top:12px;
+
 }
 
