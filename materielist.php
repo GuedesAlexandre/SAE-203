@@ -35,6 +35,7 @@
 
     <?php
     session_start();
+    $quantité ="Quantité : ";
     $conn = mysqli_connect("localhost", "root", "root", "Matos");
 
     if (!$conn) {
@@ -52,7 +53,7 @@
                 echo' <div class="box">';
                 echo' <h2>'.$mat["Nom"].'</h2>';
                 echo '<p>'.$mat["Description"].'</p>';
-                echo '<span>'.$mat["Quantité"].'</span>';
+                echo '<span>'.$quantité.$mat["Quantité"].'</span>';
                 echo'</div>';
                 echo"<br>"; 
 
