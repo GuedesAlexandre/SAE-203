@@ -22,15 +22,9 @@
 </div>
 
 
-    <div class="container">
-        <div class="box">
-        <h2>Matériels</h2>
-        <p>Coucou ceci est la description</p>
-        <span>Quantité</span>
-        </div>
-        
+
     
-    </div>
+
     <?php
     session_start();
     $conn = mysqli_connect("localhost", "root", "root", "Matos");
@@ -40,7 +34,23 @@
     }
     $sql = "SELECT Nom,Quantité,Description FROM Materiels;
     ";
-    $result = mysqli_query()
+    $result = mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result) ==1 ){
+        echo '<div class="container">';
+        echo' <div class="box">';
+        while($mat =mysqli_fetch_assoc($result)){
+
+       echo' <h2>'.$mat["Nom"].'</h2>';
+        echo '<p>'.$mat["Description"].'</p>';
+        echo '<span>'.$mat["Quantité"].'</span>';
+        echo'</div>';
+
+        }
+
+
+
+
+    }
     ?>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

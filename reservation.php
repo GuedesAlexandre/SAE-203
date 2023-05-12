@@ -59,7 +59,7 @@ if (mysqli_num_rows($resultat) > 0) {
     echo '
    <main>
    <div class="containform">
-            <form class="form" action="test.php" method="post">
+            <form class="form" action="reservation.php" method="post">
                 <h2>RESERVATION OF EQUIPMENTS</h2>
   <select name="equipement">';
     while ($row = mysqli_fetch_assoc($resultat)) {
