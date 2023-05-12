@@ -32,23 +32,28 @@
     if (!$conn) {
         die("Connexion échouée: " . mysqli_connect_error());
     }
-    $sql = "SELECT Nom,Quantité,Description FROM Materiels;
+    $sql = "SELECT Nom,Quantité,Description FROM Materiels ;
     ";
-    $result = mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result) ==1 ){
-        echo '<div class="container">';
-        echo' <div class="box">';
-        while($mat =mysqli_fetch_assoc($result)){
 
-       echo' <h2>'.$mat["Nom"].'</h2>';
-        echo '<p>'.$mat["Description"].'</p>';
-        echo '<span>'.$mat["Quantité"].'</span>';
-        echo'</div>';
+    if(mysqli_query($conn,$sql)){
+        $result = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) >1 ){
 
-        }
+            while($mat =mysqli_fetch_assoc($result)){
+                echo '<div class="container">';
+                echo' <div class="box">';
+                echo' <h2>'.$mat["Nom"].'</h2>';
+                echo '<p>'.$mat["Description"].'</p>';
+                echo '<span>'.$mat["Quantité"].'</span>';
+                echo'</div>';
+
+            }
 
 
 
+
+
+        }echo 'ptn de php qui me saoule';
 
     }
     ?>
