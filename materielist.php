@@ -10,16 +10,39 @@
 <header>
 
 </header>
-<input type="search" placeholder="search">
+<div id="search">
+
+<input type="search" placeholder="search" class="searchbar">
+
+
+<ion-icon name="search-outline"></ion-icon>
+
+
+
+</div>
 
 
     <div class="container">
         <div class="box">
         <h2>Matériels</h2>
         <p>Coucou ceci est la description</p>
+        <span>Quantité</span>
         </div>
         
     
     </div>
+    <?php
+    session_start();
+    $conn = mysqli_connect("localhost", "root", "root", "Matos");
+
+    if (!$conn) {
+        die("Connexion échouée: " . mysqli_connect_error());
+    }
+    $sql = "SELECT Nom,Quantité,Description FROM Materiels;
+    ";
+    $result = mysqli_query()
+    ?>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
