@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*{
+    padding : 0;
+    margin:0;
+    font-family: "Poppins";
+
+}
+#search{
+
+    display:flex;
+    justify-content:center;
+    height:25vh;
+   
+    align-items:center;
+    margin-top:10px;
+    
+
+
+}
+
+
+
+.searchbar{
+    width: 700px;
+    border-radius:12px;
+    border-style:dashed;
+    border-color: blue;
+    border-width : 2px;
+    height:30px;
+    padding-left:5px;
+
+
+}
+
+.container{
+    margin-top:190px;
+    width:100%;
+    height:1080px;
+    display:flex;
+    justify-content: center;
+align-items:center;
+
+
+    flex-direction : column;
+
+}
+.box{
+    width:180vh;
+    background-color:#D9D9D9;
+    padding:20px;
+    height:20vh;
+
+
+
+}
+
+header {
+    background-color: #4741DE;
+    color: #fff;
+    padding: 15px;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.elt {
+    margin: 0 25px 0 25px;
+}
+
+
+.logo {
+    font-size: xx-large;
+}
+
+.ligne {
+    height: 25px;
+    width: 2px;
+    background-color: #fff;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    margin: 0 25px 0 25px;
+}
+
+ion-icon {
+    color: #fff;
+    width: 28.55px;
+    height: 28.55px;
+}

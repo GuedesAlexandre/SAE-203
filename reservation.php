@@ -44,6 +44,22 @@ if (!$conn) {
     die("Connexion échouée: " . mysqli_connect_error());
 }
 
+$emailuti = $_SESSION["emailuti"];
+
+$conn = mysqli_connect("localhost", "root", "root", "Matos");
+if (!$conn) {
+    die("La connexion a échoué : " . mysqli_connect_error());
+}
+$sql = "SELECT IDE,Prenom FROM utilisateurs WHERE email='$emailuti'";
+$resultat = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($resultat) == 1) {
+    // L'utilisateur a été trouvé dans la base de données
+    $IDEutilisateur = mysqli_fetch_assoc($resultat);
+    $IDE = $IDEutilisateur["IDE"];
+    
+}
+
 // Requête SQL pour sélectionner les noms de matériels
 $sql2 = "SELECT nom FROM materiels";
 
@@ -57,8 +73,7 @@ if (mysqli_num_rows($resultat) > 0) {
    <main>
    <div class="containform">
             <form class="form" action="reservation.php" method="post">
-                <h2>Réservation</h2>
-                <div class="ligne2"></div>
+                <h2>RESERVATION OF EQUIPMENTS</h2>
   <select name="equipement">';
     while ($row = mysqli_fetch_assoc($resultat)) {
         echo '<option value="' . $row["nom"] . '">' . $row["nom"] . "</option>";
@@ -133,7 +148,7 @@ if (
         if ($quantMAT > 0 && $date<=$debut){
 
             $sqlReserv = "INSERT INTO Emprunt (IDE,ID,DateDebut,DateFin)
-        VALUES ('$IDE', '$idmateriels', '$debut', '$fin');";
+            VALUES ('$IDE', '$idmateriels', '$debut', '$fin');";
 
             if (mysqli_query($conn, $sqlReserv)) {
                 echo "votre demande à été envoyé";
