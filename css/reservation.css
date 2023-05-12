@@ -119,6 +119,17 @@ header {
 
 .logo {
     font-size: xx-large;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 
 .ligne {
@@ -142,7 +153,7 @@ ion-icon {
 .containform {
     border: solid 5px #4741DE;
     width: max-content;
-    margin: 50px auto;
+    margin: 50px auto 20px auto;
     border-radius: 20px;
     box-shadow: 0px 0px 50px rgb(120, 120, 120);
 }
@@ -151,6 +162,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 form {
@@ -164,7 +176,7 @@ form {
     height: 2.5px;
     width: 250px;
     background-color: #4741DE;
-    margin: -3px 0 15px 0;
+    margin: 0 0 15px 0;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -182,17 +194,14 @@ form {
     margin: 15px 0 15px 0;
     width: 100%;
     transition: background-color .5s;
-    -webkit-transition: background-color .5s;
-    -moz-transition: background-color .5s;
-    -ms-transition: background-color .5s;
-    -o-transition: background-color .5s;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #fff;
     color: #4741DE;
-    box-sizing: border-box;
     border: dotted 2px #4741DE;
+    padding: 8px 148px 8px 148px;
 }
 
 .form-date {
@@ -224,7 +233,7 @@ select {
 
 footer {
     background-color: #4741DE;
-    padding: 25px 0 25px 0;
+    padding: 25px 0 10px 0;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -248,4 +257,30 @@ footer {
     align-items: center;
     justify-content: space-around;
     font-size: x-large;
+}
+
+.msg {
+    color: #4741DE;
+    font-weight: bold;
+}
+
+.msgbox {
+    margin-bottom: 5px;
+}
+
+.btnadmin button {
+    color: #fff;
+    background-color: #4741DE;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .5s;
+}
+
+.btnadmin button:hover {
+    background-color: #fff;
+    color: #4741DE;
+    border: dotted 2px #4741DE;
+    padding: 8px 28px 8px 28px;
 }

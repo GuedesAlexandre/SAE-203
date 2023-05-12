@@ -7,7 +7,7 @@
 <body>
     <header>
         <nav class="navbar">
-            <span class="logo">MATOS</span>
+            <a href='#' class="logo">MATOS</a>
             <div class="navlinks">
                 <div class="relat">
                     <a class="elt elt-hov" href="#">Accueil</a>
@@ -37,7 +37,7 @@
 session_start();
 
 // Connexion à la base de données
-$conn = mysqli_connect("localhost", "root", "root", "Matos");
+$conn = mysqli_connect("localhost", "root", "", "Matos");
 
 // Vérifier si la connexion est établie
 if (!$conn) {
@@ -46,7 +46,7 @@ if (!$conn) {
 
 $emailuti = $_SESSION["emailuti"];
 
-$conn = mysqli_connect("localhost", "root", "root", "Matos");
+$conn = mysqli_connect("localhost", "root", "", "Matos");
 if (!$conn) {
     die("La connexion a échoué : " . mysqli_connect_error());
 }
@@ -73,7 +73,8 @@ if (mysqli_num_rows($resultat) > 0) {
    <main>
    <div class="containform">
             <form class="form" action="reservation.php" method="post">
-                <h2>RESERVATION OF EQUIPMENTS</h2>
+                <h2>Réservation</h2>
+                <div class="ligne2"></div>
   <select name="equipement">';
     while ($row = mysqli_fetch_assoc($resultat)) {
         echo '<option value="' . $row["nom"] . '">' . $row["nom"] . "</option>";
@@ -85,14 +86,13 @@ if (mysqli_num_rows($resultat) > 0) {
                     <input type="datetime-local" name="end" placeholder="End date" required>
                 </div>
                 <div class="comments">
-                    <textarea name="commentaire" cols="30" rows="10" placeholder="Comments..."></textarea>
+                    <textarea name="commentaire" cols="30" rows="10" placeholder="Comments..." required></textarea>
                 </div>
                 <div class="btndiv">
                     <input type="submit" value="SUBMIT" class="btn">
                 </div>
             </form>
-        </div>
-    </main>';
+        </div>';
 } else {
     echo "Aucun résultat trouvé";
 }
@@ -104,7 +104,7 @@ if (
 ) {
     $emailuti = $_SESSION["emailuti"];
 
-    $conn = mysqli_connect("localhost", "root", "root", "Matos");
+    $conn = mysqli_connect("localhost", "root", "", "Matos");
     if (!$conn) {
         die("La connexion a échoué : " . mysqli_connect_error());
     }
@@ -151,18 +151,18 @@ if (
             VALUES ('$IDE', '$idmateriels', '$debut', '$fin');";
 
             if (mysqli_query($conn, $sqlReserv)) {
-                echo "votre demande à été envoyé";
-                echo "<a href='quantité.php'><button>ADMIN</button></a>";
+                echo "<div class='msgbox'><span class='msg'>Votre demande à été envoyé.</span></div>";
+                echo "<a href='quantité.php' class='btnadmin'><button>ADMIN</button></a>";
 
             } else {
-                echo "produits indisponible";
+                echo "<div class='msgbox'><span class='msg'>Produit indisponible.</span></div>";
             }
         }else{
-            echo "date ou quantité indisponible";
+            echo "<div class='msgbox'><span class='msg'>Date ou quantité indisponible.</span></div>";
         }
 
 }else{
-    echo "champs manquants";
+    echo "<div class='msgbox'><span class='msg'>Champ(s) manquant(s).</span></div>";
 }
 //gest statut et quantité;
 
@@ -171,6 +171,8 @@ if (
 
 mysqli_close($conn);
 ?>
+
+    </main>
 
 
     <footer>
