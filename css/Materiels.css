@@ -29,9 +29,9 @@
 }
 
 .container{
-    margin-top:150px;
+    margin-top:180px;
 
-    height:1080px;;
+    height:1080px;
     display:flex;
     justify-content: center;
 align-items:center;
@@ -43,8 +43,10 @@ align-items:center;
 .box{
     width:180vh;
     background-color:grey;
-    padding:12px;
+    padding:20px;
     height:20vh;
+
+
 
 }
 
