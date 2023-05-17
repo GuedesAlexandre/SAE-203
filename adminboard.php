@@ -40,11 +40,11 @@
             <h2>Bienvenue Admin</h2>
 
         </div>
-    </main>
 
     <img src="img/casque.png" class="casque">
     </div>
 
+    </main>
 
 
 <footer>
