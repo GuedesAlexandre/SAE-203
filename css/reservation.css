@@ -294,3 +294,21 @@ footer {
     border: dotted 2px #4741DE;
     padding: 8px 28px 8px 28px;
 }
+.banner{
+    width:100%;
+    height:900px;
+    bottom:50px;
+    position: relative;
+    z-index:70;
+
+}
+.casque{
+    width:100%;
+    height :800px;
+}
+.acceuiltxt{
+    z-index:90;
+    text-align:center;
+    position: relative;
+    bottom:42.5rem;
+}
