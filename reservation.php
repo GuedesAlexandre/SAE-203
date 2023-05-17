@@ -72,6 +72,7 @@ if (mysqli_num_rows($resultat) > 0) {
 
     echo '
    <main>
+   <div class="container">
    <div class="containform">
             <form class="form" action="reservation.php" method="post">
                 <h2>Réservation</h2>
@@ -172,7 +173,7 @@ if (
 
 mysqli_close($conn);
 ?>
-
+        </div>
     </main>
 
 
