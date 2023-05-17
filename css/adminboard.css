@@ -173,7 +173,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100%;
+
 }
 
 form {
@@ -298,18 +298,18 @@ footer {
 .banner{
     width:100%;
     height:900px;
-    bottom:50px;
+
     position: relative;
     z-index:70;
 
 }
 .casque{
     width:100%;
-    height :100%;
+    height :70%;
 }
 .acceuiltxt{
     z-index:90;
     text-align:center;
     position: relative;
-    bottom:-50%;;
+
 }
