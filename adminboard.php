@@ -35,9 +35,14 @@
     <script src="js/reservation.js"></script>
     <main>
     <div class="banner">
+
     <img src="img/casque.png" class="casque">
     </div>
+ <div class="acceuiltxt">
+            <h1>SITE DE RESERVATION DE L’IUT DE MEAUX</h1>
+            <h2>Bienvenue Admin</h2>
 
+        </div>
     </main>
 
 
