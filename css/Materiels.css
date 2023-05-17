@@ -65,7 +65,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .navbar {
@@ -73,11 +72,92 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+.deco {
+    background-color: #fff;
+    color: #4741DE;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    min-width: 0;
+    width: 0;
+}
+
+.width {
+    min-width: 100%;
+}
+
+.box1 {
+    background-color: #f0f0f0;
+    width: max-content;
+    border-bottom: solid 1px #4741DE;
+    border-right: solid 1px #4741DE;
+    border-left: solid 1px #4741DE;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 5px 10px 5px;
+}
+
+.box1 ion-icon {
+    color: #4741DE;
+    margin-right: 10px;
+}
+
+.deco span {
+    align-self: flex-end;
+    color: #4741DE;
+}
 
 .elt {
     margin: 0 25px 0 25px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
 }
 
+.icon {
+    margin: 0 25px 0 25px;
+    cursor: pointer;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.elt:hover {
+    opacity: 1;
+}
+
+.elt::before {
+    transition: 300ms;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.elt-hov::before {
+    width: 0%;
+    bottom: 0;
+}
+
+.elt-hov:hover::before {
+    width: 100%;
+}
+
+.relat {
+    position: relative;
+}
 
 .logo {
     font-size: xx-large;
@@ -100,3 +180,30 @@ ion-icon {
     width: 28.55px;
     height: 28.55px;
 }
+footer {
+    margin-top:25%;
+    background-color: #4741DE;
+    padding: 25px 25px 0 25px;
+    width:178vh
+}
+
+.foot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+}
+
+.foot span {
+    margin: 15px auto;
+    color: #fff;
+}
+
+.namelist {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: x-large;
+}
+
