@@ -297,11 +297,11 @@ footer {
 }
 .casque{
     width:100%;
-    height :800px;
+    height :100%;
 }
 .acceuiltxt{
     z-index:90;
     text-align:center;
     position: relative;
-    bottom:42.5rem;
+    bottom:-50%;;
 }
