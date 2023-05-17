@@ -75,16 +75,18 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
     if(!empty($emailuti) && !empty($passworduti)){
     $sql = "SELECT * FROM utilisateurs WHERE email = '$emailuti' AND password = '$passwordverify' ";
     $result = $conn->query($sql);
-    
-    if (mysqli_num_rows($result) == 1 ) {
+    $row = mysqli_fetch_assoc($result);
+   $statut = $row["Role"];
+   if($statut == 1){
+       header("Location: adminboard.php");
       // L'utilisateur est connecté, on redirige vers une autre page
       
-        header("Location: board.php");
-    exit();
-    } else {
+    } else if($statut ==0){
       // L'utilisateur n'a pas pu se connecter, on affiche un message d'erreur
-      echo "Email ou mot de passe incorrect.";
-    }
+      header("Location: board.php");
+    }else{
+       echo "Email ou mot de passe incorrect";
+   }
 }
     // Fermeture de la connexion à la base de données
     $conn->close();

@@ -38,8 +38,6 @@ header {
     overflow: hidden;
     min-width: 0;
     width: 0;
-    position: absolute;
-    z-index: -1;
 }
 
 .width {
@@ -56,7 +54,6 @@ header {
     flex-direction: row;
     align-items: center;
     padding: 10px 5px 10px 5px;
-    z-index:90;
 }
 
 .box ion-icon {
@@ -67,7 +64,6 @@ header {
 .deco span {
     align-self: flex-end;
     color: #4741DE;
-    z-index:90;
 }
 
 .elt {
@@ -154,16 +150,10 @@ ion-icon {
     height: 28.55px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .containform {
     border: solid 5px #4741DE;
     width: max-content;
+    margin: 50px auto 20px auto;
     border-radius: 20px;
     box-shadow: 0px 0px 50px rgb(120, 120, 120);
 }
@@ -173,7 +163,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100%;
 }
 
 form {
@@ -217,13 +206,14 @@ form {
 
 .form-date {
     display: flex;
-    justify-content: space-between;
+    justify-content: stretch;
     width: 100%;
 }
 
 .form-date input {
     border: solid 2px #4741DE;
-    margin: 15px 0 15px 0;
+    margin: 10px 0 10px 0;
+    width: 100%;
 }
 
 select {
@@ -240,6 +230,7 @@ select {
     border: solid 2px #4741DE;
     resize: none;
     width: 100%;
+    margin: 10px 0 0 0;
 }
 
 footer {
@@ -294,22 +285,4 @@ footer {
     color: #4741DE;
     border: dotted 2px #4741DE;
     padding: 8px 28px 8px 28px;
-}
-.banner{
-    width:100%;
-    height:900px;
-    bottom:50px;
-    position: relative;
-    z-index:70;
-
-}
-.casque{
-    width:100%;
-    height :800px;
-}
-.acceuiltxt{
-    z-index:90;
-    text-align:center;
-    position: relative;
-    bottom:42.5rem;
 }
