@@ -41,7 +41,7 @@
 
         </div>
 
-    <img src="img/casque.png" class="casque">
+    
     </div>
 
     </main>
