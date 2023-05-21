@@ -16,16 +16,17 @@
                     <a href="materielist.php" class="elt elt-hov">Matériels</a>
                 </div>
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Vos réservations</a>
+                    <a class="elt elt-hov" href="#">Demande en cours</a>
                 </div>
                 <div class="relat">
-                    <a href="reservation.php" class="elt elt-hov">Réserver</a>
+                    <a href="ajout.php" class="elt elt-hov">Ajout de matériels</a>
                 </div>
                 <div class="ligne"></div>
                 <ion-icon name="person" class="icon" onclick="taille()"></ion-icon>
             </div>
         </nav>
     </header>
+
 
     
     <div class="deco">

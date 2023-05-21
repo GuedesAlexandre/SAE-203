@@ -8,10 +8,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    background-color: #fff;
-}
-
 header {
     background-color: #4741DE;
     color: #fff;
@@ -31,7 +27,7 @@ header {
 }
 
 .deco {
-    background-color: #fff;
+    background-color: rgb(255 255 255 / 0%);;
     color: #4741DE;
     display: flex;
     flex-direction: row-reverse;
@@ -39,7 +35,7 @@ header {
     min-width: 0;
     width: 0;
     position: absolute;
-    z-index: -1;
+    z-index: 90;
 }
 
 .width {
@@ -56,7 +52,6 @@ header {
     flex-direction: row;
     align-items: center;
     padding: 10px 5px 10px 5px;
-    z-index:90;
 }
 
 .box ion-icon {
@@ -67,7 +62,6 @@ header {
 .deco span {
     align-self: flex-end;
     color: #4741DE;
-    z-index:90;
 }
 
 .elt {
@@ -94,7 +88,7 @@ header {
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
 }
-
+  
 .elt:hover {
     opacity: 1;
 }
@@ -154,101 +148,13 @@ ion-icon {
     height: 28.55px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.containform {
-    border: solid 5px #4741DE;
-    width: max-content;
-    border-radius: 20px;
-    box-shadow: 0px 0px 50px rgb(120, 120, 120);
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-}
-
-form {
-    margin: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ligne2 {
-    height: 2.5px;
-    width: 250px;
-    background-color: #4741DE;
-    margin: 0 0 15px 0;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    align-self: flex-start;
-}
-
-.btn {
-    background-color: #4741DE;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 150px 10px 150px;
-    color: #fff;
-    margin: 15px 0 15px 0;
-    width: 100%;
-    transition: background-color .5s;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #fff;
-    color: #4741DE;
-    border: dotted 2px #4741DE;
-    padding: 8px 148px 8px 148px;
-}
-
-.form-date {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.form-date input {
-    border: solid 2px #4741DE;
-    margin: 15px 0 15px 0;
-}
-
-select {
-    border: solid 2px #4741DE;
-    width: max-content;
-    width: 100%;
-}
-
-.comments {
-    width: 100%;
-}
-
-.comments textarea {
-    border: solid 2px #4741DE;
-    resize: none;
-    width: 100%;
-}
-
-footer {
+/*footer {
     background-color: #4741DE;
     padding: 25px 0 10px 0;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
-}
+}*/
 
 .foot {
     display: flex;
@@ -270,46 +176,43 @@ footer {
     font-size: x-large;
 }
 
-.msg {
-    color: #4741DE;
-    font-weight: bold;
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.msgbox {
-    margin-bottom: 5px;
+.imgtxt img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -9999;
 }
 
-.btnadmin button {
-    color: #fff;
+.pagecontain {
+    position: relative;
+    min-height: 100vh;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: #4741DE;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color .5s;
+    padding: 25px 0 10px 0;
 }
 
-.btnadmin button:hover {
-    background-color: #fff;
-    color: #4741DE;
-    border: dotted 2px #4741DE;
-    padding: 8px 28px 8px 28px;
+.txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.banner{
-    width:100%;
-    height:900px;
-    background-image:url(img/casque.png);
-    position: relative;
-    z-index:70;
 
-}
-.casque{
-    width:100%;
-    height :70%;
-}
-.acceuiltxt{
-    z-index:90;
-    text-align:center;
-    position: relative;
-
+.imgtxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
