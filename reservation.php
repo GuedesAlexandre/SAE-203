@@ -10,10 +10,16 @@
             <a href='#' class="logo">MATOS</a>
             <div class="navlinks">
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Accueil</a>
+                    <a class="elt elt-hov" href="board.php">Accueil</a>
                 </div>
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Réservations</a>
+                    <a href="materielist.php" class="elt elt-hov">Matériels</a>
+                </div>
+                <div class="relat">
+                    <a class="elt elt-hov" href="#">Vos réservations</a>
+                </div>
+                <div class="relat">
+                    <a href="reservation.php" class="elt elt-hov">Réserver</a>
                 </div>
                 <div class="ligne"></div>
                 <ion-icon name="person" class="icon" onclick="taille()"></ion-icon>
@@ -38,7 +44,7 @@
 session_start();
 
 // Connexion à la base de données
-$conn = mysqli_connect("localhost", "root", "root", "Matos");
+$conn = mysqli_connect("localhost", "root", "", "Matos");
 
 // Vérifier si la connexion est établie
 if (!$conn) {
@@ -47,7 +53,7 @@ if (!$conn) {
 
 $emailuti = $_SESSION["emailuti"];
 
-$conn = mysqli_connect("localhost", "root", "root", "Matos");
+$conn = mysqli_connect("localhost", "root", "", "Matos");
 if (!$conn) {
     die("La connexion a échoué : " . mysqli_connect_error());
 }
@@ -106,7 +112,7 @@ if (
 ) {
     $emailuti = $_SESSION["emailuti"];
 
-    $conn = mysqli_connect("localhost", "root", "root", "Matos");
+    $conn = mysqli_connect("localhost", "root", "", "Matos");
     if (!$conn) {
         die("La connexion a échoué : " . mysqli_connect_error());
     }

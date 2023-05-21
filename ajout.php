@@ -10,16 +10,16 @@
             <a href='#' class="logo">MATOS</a>
             <div class="navlinks">
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Accueil</a>
+                    <a class="elt elt-hov" href="board.php">Accueil</a>
                 </div>
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Réservations</a>
+                    <a href="materielist.php" class="elt elt-hov">Matériels</a>
                 </div>
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Ajout</a>
+                    <a class="elt elt-hov" href="#">Vos réservations</a>
                 </div>
-                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Réserver</a>
+                <div class="relat">
+                    <a href="reservation.php" class="elt elt-hov">Réserver</a>
                 </div>
                 <div class="ligne"></div>
                 <ion-icon name="person" class="icon" onclick="taille()"></ion-icon>
@@ -45,7 +45,7 @@
     echo '
    <main>
    <div class="containform">
-            <form class="form" action="ajout.php" method="post">
+            <form class="form" action="ajout.php.php" method="post">
                 <h2>Add Material</h2>
                 <div class="ligne2"></div>
   ';
@@ -71,25 +71,6 @@
                 </div>
             </form>
         </div>';
-
-        session_start();
-        $conn = mysqli_connect("localhost", "root", "root", "Matos");
-        if (!$conn) {
-	        die("La connexion a échoué : " . mysqli_connect_error());
-        }       
-        if(!empty($_POST["Name"])&&!empty($_POST["Type"])&& !empty($_POST["Quantity"])&&!empty($_POST["commentaire"])){
-            $Name = $_POST["Name"];
-            $Type = $_POST["Type"];
-            $Quantity = $_POST["Quantity"];
-            $Commentaire = $_POST["commentaire"];
-            $ID= random_int(27000,29000);
-            $sqlajout = "INSERT INTO Materiels (ID,Nom,Type,Quantité,Description) VALUES ($ID,'$Name','$Type',$Quantity,'$Commentaire');";
-            if(mysqli_query($conn,$sqlajout)){
-                echo"matériel ajouté";
-            }else{
-               echo  "champs manquant ou incorrect";
-            }
-        }
 
          
 
