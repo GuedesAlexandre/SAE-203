@@ -71,6 +71,8 @@ $sql = "SELECT Nom,Quantité,Description FROM Materiels ;
        if (mysqli_query($conn, $sql)) {
            $result = mysqli_query($conn, $sql);
            if (mysqli_num_rows($result) > 1) {
+
+         
                echo '<div class="container">';
                echo '
                <div id="search">
