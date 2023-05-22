@@ -57,10 +57,7 @@ $passwordverify = hash('sha256', $passworduti);
     </div>
 </div>
 
-<div id="search">
-    <input type="search" placeholder="search" class="searchbar">
-    
-</div>';
+       ';
 
        $quantité = "Quantité : ";
        $conn = mysqli_connect("localhost", "root", "root", "Matos");
@@ -75,6 +72,11 @@ $sql = "SELECT Nom,Quantité,Description FROM Materiels ;
            $result = mysqli_query($conn, $sql);
            if (mysqli_num_rows($result) > 1) {
                echo '<div class="container">';
+               echo '
+               <div id="search">
+                   <input type="search" placeholder="search" class="searchbar">
+                   
+               </div>';
                while ($mat = mysqli_fetch_assoc($result)) {
 
                    echo ' <div class="box">';
@@ -106,9 +108,10 @@ echo "</div>";
 
 
     } else if($statut ==0){
+        
 
     }else{
-       echo "Email ou mot de passe incorrect";
+       echo "tu fais quoi ici petit malin";
 
 }
     // Fermeture de la connexion à la base de données
