@@ -57,7 +57,7 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
             $_SESSION["emailuti"] = $_POST['email'];
             $_SESSION["passworduti"] = $_POST['password'];
             $emailuti=$_SESSION["emailuti"];
-            $passworduti = $_SESSION["passworduti"] ;
+            $passworduti = $_SESSION["passworduti"];
             
             $passwordverify = hash('sha256', $passworduti);
             

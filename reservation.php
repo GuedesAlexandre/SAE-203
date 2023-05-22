@@ -5,6 +5,9 @@
 
 </head>
 <body>
+<?php
+
+?>
     <header>
         <nav class="navbar">
             <a href='#' class="logo">MATOS</a>
