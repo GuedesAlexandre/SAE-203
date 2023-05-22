@@ -1,58 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-*{
-    padding : 0;
-    margin:0;
-    font-family: "Poppins";
-
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
 }
-#search{
 
-    display:flex;
-    justify-content:center;
-    height:25vh;
-   
-    align-items:center;
+#search {
+    display: flex;
+    justify-content: center;
     margin-top:10px;
-    
-
-
 }
 
-
-
-.searchbar{
+.searchbar {
     width: 700px;
     border-radius:12px;
     border-style:dashed;
-    border-color: blue;
+    border-color: #4741DE;
     border-width : 2px;
-    height:30px;
-    padding-left:5px;
-
-
+    height: 30px;
+    padding: 0 5px 0 5px;
 }
 
-.container{
-    margin-top:190px;
+.container {
+    margin: 165px 0 150px 0;
     width:100%;
     height:1080px;
     display:flex;
     justify-content: center;
-align-items:center;
-
-
+    align-items:center;
     flex-direction : column;
-
 }
-.box{
+
+.box {
     width:180vh;
     background-color:#D9D9D9;
     padding:20px;
     height:20vh;
-
-
-
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 header {
@@ -72,6 +63,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 .deco {
     background-color: #fff;
     color: #4741DE;
@@ -161,6 +153,17 @@ header {
 
 .logo {
     font-size: xx-large;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 
 .ligne {
@@ -180,11 +183,13 @@ ion-icon {
     width: 28.55px;
     height: 28.55px;
 }
+
 footer {
-    margin-top:25%;
     background-color: #4741DE;
-    padding: 25px 25px 0 25px;
-    width:178vh
+    padding: 25px 0 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .foot {
@@ -206,4 +211,3 @@ footer {
     justify-content: space-around;
     font-size: x-large;
 }
-

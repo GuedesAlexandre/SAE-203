@@ -7,47 +7,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
 </head>
 <body>
- <header>
+    <header>
         <nav class="navbar">
-            <span class="logo">MATOS</span>
+            <a href='#' class="logo">MATOS</a>
             <div class="navlinks">
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Accueil</a>
+                    <a class="elt elt-hov" href="board.php">Accueil</a>
                 </div>
-                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Matériels</a>
+                <div class="relat">
+                    <a href="materielist.php" class="elt elt-hov">Matériels</a>
                 </div>
                 <div class="relat">
                     <a class="elt elt-hov" href="#">Vos réservations</a>
                 </div>
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Réserver</a>
+                    <a href="reservation.php" class="elt elt-hov">Réserver</a>
                 </div>
                 <div class="ligne"></div>
                 <ion-icon name="person" class="icon" onclick="taille()"></ion-icon>
             </div>
         </nav>
     </header>
-     <div class="deco">
+
+
+    <div class="deco">
         <div class="box1">
             <ion-icon name="log-out-outline"></ion-icon>
             <a href="déconnexion.php">Déconnexion</a>
         </div>
     </div>
-<div id="search">
 
-<input type="search" placeholder="search" class="searchbar">
-
-
-<ion-icon name="search-outline"></ion-icon>
-
-
-
-</div>
-
-
-
-    
+    <div id="search">
+        <input type="search" placeholder="search" class="searchbar">
+        <ion-icon name="search-outline"></ion-icon>
+    </div>
 
     <?php
     session_start();
@@ -98,10 +91,12 @@
             <span>©MATOS | 2023 | Mentions Légales</span>
         </div>
     </footer>
-<script src="js/reservation.js"></script>
+
+    <script src="js/reservation.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>

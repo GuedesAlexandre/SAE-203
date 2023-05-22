@@ -10,10 +10,16 @@
             <a href='#' class="logo">MATOS</a>
             <div class="navlinks">
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Accueil</a>
+                    <a class="elt elt-hov" href="board.php">Accueil</a>
                 </div>
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Réservations</a>
+                    <a href="materielist.php" class="elt elt-hov">Matériels</a>
+                </div>
+                <div class="relat">
+                    <a class="elt elt-hov" href="#">Vos réservations</a>
+                </div>
+                <div class="relat">
+                    <a href="reservation.php" class="elt elt-hov">Réserver</a>
                 </div>
                 <div class="ligne"></div>
                 <ion-icon name="person" class="icon" onclick="taille()"></ion-icon>
