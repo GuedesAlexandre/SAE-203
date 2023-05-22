@@ -62,7 +62,9 @@ if (mysqli_num_rows($resultat) == 1) {
 }
 
 // Requête SQL pour sélectionner les noms de matériels
-$sql2 = "SELECT nom FROM materiels";
+$sql2 = "SELECT nom
+FROM Materiels
+WHERE ID NOT IN (SELECT ID FROM Emprunt);";
 
 $resultat = mysqli_query($conn, $sql2);
 
