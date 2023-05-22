@@ -56,7 +56,10 @@ $passwordverify = hash('sha256', $passworduti);
         <a href="déconnexion.php">Déconnexion</a>
     </div>
 </div>
+   <div id="search">
+                   <input type="search" placeholder="search" class="searchbar">
 
+               </div>
        ';
 
        $quantité = "Quantité : ";
@@ -74,11 +77,7 @@ $sql = "SELECT Nom,Quantité,Description FROM Materiels ;
 
          
                echo '<div class="container">';
-               echo '
-               <div id="search">
-                   <input type="search" placeholder="search" class="searchbar">
-                   
-               </div>';
+
                while ($mat = mysqli_fetch_assoc($result)) {
 
                    echo ' <div class="box">';
