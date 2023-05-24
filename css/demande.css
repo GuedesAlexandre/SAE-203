@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+.container {
+    margin: -200px 0 150px 0;
+    width:100%;
+    height:1080px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction : column;
+}
+
+.box {
+    width:80vh;
+    background-color:#D9D9D9;
+    padding:20px;
+    height:20vh;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+header {
+    background-color: #4741DE;
+    color: #fff;
+    padding: 15px;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deco {
+    background-color: #fff;
+    color: #4741DE;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    min-width: 0;
+    width: 0;
+}
+
+.width {
+    min-width: 100%;
+}
+
+.box1 {
+    background-color: #f0f0f0;
+    width: max-content;
+    border-bottom: solid 1px #4741DE;
+    border-right: solid 1px #4741DE;
+    border-left: solid 1px #4741DE;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 5px 10px 5px;
+}
+
+.box1 ion-icon {
+    color: #4741DE;
+    margin-right: 10px;
+}
+
+.deco span {
+    align-self: flex-end;
+    color: #4741DE;
+}
+
+.elt {
+    margin: 0 25px 0 25px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+.icon {
+    margin: 0 25px 0 25px;
+    cursor: pointer;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.elt:hover {
+    opacity: 1;
+}
+
+.elt::before {
+    transition: 300ms;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.elt-hov::before {
+    width: 0%;
+    bottom: 0;
+}
+
+.elt-hov:hover::before {
+    width: 100%;
+}
+
+.relat {
+    position: relative;
+}
+
+.logo {
+    font-size: xx-large;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.bouton form{
+    
+    margin:12px;
+}
+
+.bouton{
+    display: flex;
+}

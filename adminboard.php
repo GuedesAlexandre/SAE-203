@@ -18,7 +18,7 @@
                             <a href="materielist.php" class="elt elt-hov">Matériels</a>
                         </div>
                         <div class="relat">
-                            <a class="elt elt-hov" href="#">Demande en cours</a>
+                            <a class="elt elt-hov" href="demande.php">Demande en cours</a>
                         </div>
                         <div class="relat">
                             <a href="ajout.php" class="elt elt-hov">Ajout de matériels</a>
