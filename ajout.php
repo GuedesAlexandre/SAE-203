@@ -13,13 +13,13 @@
                     <a class="elt elt-hov" href="#">Accueil</a>
                 </div>
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Réservations</a>
+                    <a class="elt elt-hov" href="#">Matériels</a>
                 </div>
                 <div class="relat">
-                    <a class="elt elt-hov" href="#">Ajout</a>
+                    <a class="elt elt-hov" href="#">Demande en cours</a>
                 </div>
                  <div class="relat">
-                    <a class="elt elt-hov" href="#">Réserver</a>
+                    <a class="elt elt-hov" href="#">Ajout de matériels</a>
                 </div>
                 <div class="ligne"></div>
                 <ion-icon name="person" class="icon" onclick="taille()"></ion-icon>
