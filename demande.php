@@ -7,6 +7,9 @@
   
 </head>
 <body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/reservation.js"></script>
 <?php 
 session_start();
 
@@ -56,16 +59,30 @@ $passwordverify = hash('sha256', $passworduti);
    
        ';
     $sqldemandeencours = "SELECT * FROM Emprunt WHERE statut = 0; ";
+    
     $affichedemande = mysqli_query($conn,$sqldemandeencours);
-    if (mysqli_num_rows($affichedemande) > 0) {
+    if (mysqli_num_rows($affichedemande) > 0 ) {
         
         echo '<div class="container">';
         echo "Bienvenue Admin";
+      
+        
 
                while ($mat = mysqli_fetch_assoc($affichedemande)) {
+                $sqlnom = "SELECT Nom FROM Materiels WHERE ID =".$mat["ID"].";";
+                $resultatnom = mysqli_query($conn,$sqlnom);
+                $nom = mysqli_fetch_assoc($resultatnom);
+
+                $sqlIDE = "SELECT Nom,Prenom FROM utilisateurs WHERE IDE = ".$mat["IDE"].";";
+                $resultnom = mysqli_query($conn,$sqlIDE);
+                $nomETU = mysqli_fetch_assoc($resultnom);
+                
 
                    echo ' <div class="box">';
                    echo ' <h2>' . $mat["ID"] . '</h2>';
+                   echo ' <h2>' . $nom["Nom"] . '</h2>';
+                  
+                   echo ' <h2>' . $nomETU["Nom"].'  '.$nomETU["Prenom"]. '</h2>';
                    echo '<p>' . $mat["IDE"] . '</p>';
                    echo '<span>'." Date Debut:".'<br>'. $mat["DateDebut"] .'<br>'."Date Fin:".'<br>'. $mat["DateFin"] . '</span>';
                    
@@ -101,13 +118,13 @@ $passwordverify = hash('sha256', $passworduti);
 
       }
   }else if(isset($_POST["delete"])){
-      $sql3 = "DELETE FROM EMPRUNT WHERE   ID = ".$mat["ID"].";";
+      $sql3 = "DELETE FROM EMPRUNT WHERE  ID = ".$_POST["delete"].";";
       $conn3 = mysqli_connect("localhost","root","root","Matos");
       if(mysqli_query($conn3,$sql3)){
           echo "demande supprimé";
       }
   }else if(isset($_POST["disagree"])){
-      $sql4 = "UPDATE Emprunt SET statut = 2 WHERE ID = ".$mat["ID"].";";
+      $sql4 = "UPDATE Emprunt SET statut = 2 WHERE  ID = ".$_POST["disagree"].";";
       $conn4 = mysqli_connect("localhost","root","root","Matos");
       if(mysqli_query($conn4,$sql4)){
           echo"demande refusé";

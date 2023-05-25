@@ -37,7 +37,7 @@
 
       <main>
           <div class="imgtxt">
-              <img src="img/casque" alt="casque">
+              <img src="img/casque.png" alt="casque">
               <div class="txt">
                   <h1>SITE DE RESERVATION DE L'IUT DE MEAUX</h1>
                   <?php
