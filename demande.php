@@ -75,30 +75,30 @@ $passwordverify = hash('sha256', $passworduti);
                     echo "<br>";
                     echo"<div class='bouton'>";
                     echo"<form action='demande.php' method ='post'>";
-                    echo"<input type='submit' value='AGREE' name='agree'>";
+                    echo"<input type='submit'  value='agree' name='agree' value =".$mat["ID"].">";
                     echo"</form>";
                     echo"<form action='demande.php' method ='post'>";
-                    echo"<input type='submit' value='DISAGREE' name='disagree'>";
+                    echo"<input type='submit' value= 'disagree' value =".$mat["ID"]." name='disagree'>";
                     echo"</form>";
                     echo"<form action='demande.php' method ='post'>";
-                    echo"<input type='submit' value='DELETE' name='delete'>";
+                    echo"<input type='submit' value='delete' value =".$mat["ID"]." name='delete'>";
                     echo"</form>";
                     echo"</div>";
                     if(isset($_POST["agree"])){
-                     $sql2 = "UPDATE Emprunt SET statut = 1 WHERE  statut = 0 AND ID = ".$mat["ID"].";";
+                     $sql2 = "UPDATE Emprunt SET statut = 1 WHERE  ID = ".$mat["ID"].";";
                      $conn2 = mysqli_connect("localhost","root","root","Matos");
                      if(mysqli_query($conn2,$sql2)){
                          echo"good";
 
                      }
                     }else if(isset($_POST["delete"])){
-                        $sql3 = "DELETE FROM EMPRUNT WHERE statut = 0 AND ID = ".$mat["ID"].";";
+                        $sql3 = "DELETE FROM EMPRUNT WHERE   ID = ".$mat["ID"].";";
                         $conn3 = mysqli_connect("localhost","root","root","Matos");
                         if(mysqli_query($conn3,$sql3)){
                             echo "demande supprimé";
                         }
                     }else if(isset($_POST["disagree"])){
-                        $sql4 = "UPDATE Emprunt SET statut = 2 WHERE statut = 0 AND ID = ".$mat["ID"].";";
+                        $sql4 = "UPDATE Emprunt SET statut = 2 WHERE ID = ".$mat["ID"].";";
                         $conn4 = mysqli_connect("localhost","root","root","Matos");
                         if(mysqli_query($conn4,$sql4)){
                             echo"demande refusé";
