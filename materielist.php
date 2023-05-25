@@ -108,7 +108,8 @@ echo "</div>";
 
 
 
-    } else if($statut ==0){
+    } else if($statut == 0){
+        
         
 
     }else{
