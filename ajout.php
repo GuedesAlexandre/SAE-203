@@ -45,7 +45,7 @@
 echo '
    <main>
    <div class="containform">
-            <form class="form" action="ajout.php.php" method="post">
+            <form class="form" action="ajout.php" method="post">
                 <h2>Add Material</h2>
                 <div class="ligne2"></div>
   ';
