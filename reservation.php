@@ -165,7 +165,6 @@ if (
 
             if (mysqli_query($conn, $sqlReserv)) {
                 echo "<div class='msgbox'><span class='msg'>Votre demande à été envoyé.</span></div>";
-                echo "<a href='quantité.php' class='btnadmin'><button>ADMIN</button></a>";
 
             } else {
                 echo "<div class='msgbox'><span class='msg'>Produit indisponible.</span></div>";
