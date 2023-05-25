@@ -82,11 +82,11 @@ echo '
             $Type = $_POST["Type"];
             $Quantity = $_POST["Quantity"];
             $Commentaire = $_POST["commentaire"];
-            
+            $quant =1;
             while($Quantity-- >0){
                 $ID= random_int(27000,29000);
 
-                $sqlajout = "INSERT INTO Materiels (ID,Nom,Type,Quantité,Description) VALUES ($ID,'$Name','$Type',$Quantity,'$Commentaire');";
+                $sqlajout = "INSERT INTO Materiels (ID,Nom,Type,Quantité,Description) VALUES ($ID,'$Name','$Type','$quant','$Commentaire');";
 
             if(mysqli_query($conn,$sqlajout)){
                 echo"matériel ajouté";
