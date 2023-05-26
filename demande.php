@@ -176,8 +176,13 @@ $passwordverify = hash('sha256', $passworduti);
                 echo '<div class="container">';
                 echo "Bienvenue Utilisateur";
                 while($demuti = mysqli_fetch_assoc($resultdemande) ){
+                    $sqlnom = "SELECT Nom FROM Materiels WHERE ID =".$demuti["ID"].";";
+                $resultatnom = mysqli_query($conn,$sqlnom);
+                $nom = mysqli_fetch_assoc($resultatnom);
                     echo ' <div class="box">';
                    echo ' <h2>' . $demuti["ID"] . '</h2>';
+                   echo ' <h2>' . $nom["Nom"] . '</h2>';
+                   
              
                   
                    
@@ -188,6 +193,13 @@ $passwordverify = hash('sha256', $passworduti);
                    echo '</div>';
                    echo "<br>";
                     echo "<br>";
+                    if($demuti["statut"] == 0){
+                        echo "demande en attente";
+                    }else if($demuti["statut"] == 1){
+                            echo"demande validée";
+                                    }else if($demuti["statut"]==2){
+                                        echo" votre demande à été refusé et sera supprimer dans les plus bref délais";
+                                    }
                     
 
                
@@ -198,13 +210,7 @@ $passwordverify = hash('sha256', $passworduti);
 
                     
                 }
-                if($demuti["statut"] == 0){
-                    echo "demande en attente";
-                }else if($demuti["statut"] == 1){
-                    echo"demande validée";
-                                }else if($demuti["statut"]==2){
-                                    echo" votre demande à été refusé et sera supprimer dans les plus bref délais";
-                                }
+                
             }
             }
 
