@@ -131,12 +131,89 @@ $passwordverify = hash('sha256', $passworduti);
       }
   }
     }else if($row["Role"] == 0){
-        
+        echo " <div class='pagecontain'>
+        <header>
+            <nav class='navbar'>
+                <a href='#' class='logo'>MATOS</a>
+                <div class='navlinks'>
+                    <div class='relat'>
+                        <a class='elt elt-hov' href='board.php'>Accueil</a>
+                    </div>
+                    <div class='relat'>
+                        <a href='materielist.php' class='elt elt-hov'>Matériels</a>
+                    </div>
+                    <div class='relat'>
+                        <a class='elt elt-hov' href='#'>Vos réservations</a>
+                    </div>
+                    <div class='relat'>
+                        <a href='reservation.php' class='elt elt-hov'>Réserver</a>
+                    </div>
+                    <div class='ligne'></div>
+                    <ion-icon name='person' class='icon' onclick='taille()'></ion-icon>
+                </div>
+            </nav>
+        </header>
+    
+          <div class='deco'>
+              <div class='box'>
+                  <ion-icon name='log-out-outline'></ion-icon>
+                  <a href='déconnexion.php'>Déconnexion</a>
+              </div>
+          </div>";
+
+        $emailuti = $_SESSION["emailuti"];
+          $sqldemandeuti = "SELECT * FROM utilisateurs WHERE Email = '$emailuti';";
+          $connuti = mysqli_connect("localhost","root","root","Matos");
+          
+          if(mysqli_query($connuti, $sqldemandeuti)){
+            $resultdemuti = mysqli_query($connuti, $sqldemandeuti);
+
+            $uti = mysqli_fetch_assoc($resultdemuti);
+            $uti = $uti["IDE"];
+            $demandeutiencours = "SELECT * FROM EMPRUNT WHERE IDE = ".$uti.";";
+            if(mysqli_query($connuti,$demandeutiencours)){
+                $resultdemande = mysqli_query($connuti,$demandeutiencours);
+                echo '<div class="container">';
+                echo "Bienvenue Utilisateur";
+                while($demuti = mysqli_fetch_assoc($resultdemande) ){
+                    echo ' <div class="box">';
+                   echo ' <h2>' . $demuti["ID"] . '</h2>';
+             
+                  
+                   
+                   echo '<p>' . $demuti["IDE"] . '</p>';
+                   echo '<span>'." Date Debut:".'<br>'. $demuti["DateDebut"] .'<br>'."Date Fin:".'<br>'. $demuti["DateFin"] . '</span>';
+                   
+                   echo'<span>'.$demuti["statut"].'</span>';
+                   echo '</div>';
+                   echo "<br>";
+                    echo "<br>";
+                    
+
+               
+
+                
+
+          
+
+                    
+                }
+                if($demuti["statut"] == 0){
+                    echo "demande en attente";
+                }else if($demuti["statut"] == 1){
+                    echo"demande validée";
+                                }else if($demuti["statut"]==2){
+                                    echo" votre demande à été refusé et sera supprimer dans les plus bref délais";
+                                }
+            }
+            }
+
+            
+          }
+          
 
 
-
-       
-   }
+   
    
 
 ?>
