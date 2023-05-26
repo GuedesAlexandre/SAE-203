@@ -82,8 +82,8 @@ $sql = "SELECT Nom,Quantité,Description FROM Materiels ;
 
                    echo ' <div class="box">';
                    echo ' <h2>' . $mat["Nom"] . '</h2>';
-                   echo '<p>' . $mat["Description"] . '</p>';
-                   echo '<span>' . $quantité . $mat["Quantité"] . '</span>';
+                   echo '<p>' . '<b>Description : </b>'. $mat["Description"] . '</p>';
+                   echo '<span>' . '<b>' .$quantité . '</b>' . $mat["Quantité"] . '</span>';
                    echo '</div>';
                    echo "<br>";
 
