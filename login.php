@@ -66,28 +66,33 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
        
     }
         
-    }
+}
     
     //Récupération des données soumises par le formulaire
-    //require du fichier php qui try and catch
+//require du fichier php qui try and catch
     
     // Insertion des données dans la table appropriée
     if(!empty($emailuti) && !empty($passworduti)){
     $sql = "SELECT * FROM utilisateurs WHERE email = '$emailuti' AND password = '$passwordverify' ";
-    $result = $conn->query($sql);
+    $result = mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result) > 0){
+
     $row = mysqli_fetch_assoc($result);
    $statut = $row["Role"];
    if($statut == 1){
        header("Location: adminboard.php");
       // L'utilisateur est connecté, on redirige vers une autre page
       
-    } else if($statut ==0){
-      // L'utilisateur n'a pas pu se connecter, on affiche un message d'erreur
+    }
+    if($statut == 0){
+
       header("Location: board.php");
-    }else{
+    }
+    } {
        echo "Email ou mot de passe incorrect";
    }
-}
+    }
+
     // Fermeture de la connexion à la base de données
     $conn->close();
 
