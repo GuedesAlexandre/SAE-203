@@ -4,6 +4,7 @@
 </head>
 <body>
 <?php
+//cette page de ne sert a r
 session_start();
 $conn =  mysqli_connect("localhost", "root", "root", "Matos");
 
