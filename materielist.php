@@ -109,6 +109,86 @@ echo "</div>";
 
 
     } else if($statut == 0){
+        echo'<header>
+        <nav class="navbar">
+            <a href="#" class="logo">MATOS</a>
+            <div class="navlinks">
+                <div class="relat">
+                    <a class="elt elt-hov" href="board.php">Accueil</a>
+                </div>
+                <div class="relat">
+                    <a href="materielist.php" class="elt elt-hov">Matériels</a>
+                </div>
+                <div class="relat">
+                    <a class="elt elt-hov" href="demande.php">Vos réservations</a>
+                </div>
+                <div class="relat">
+                    <a href="reservation.php" class="elt elt-hov">Réserver</a>
+                </div>
+                <div class="ligne"></div>
+                <ion-icon name="person" class="icon" onclick="taille()"></ion-icon>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <div class="deco">
+        <div class="box1">
+            <ion-icon name="log-out-outline"></ion-icon>
+            <a href="déconnexion.php">Déconnexion</a>
+        </div>
+    </div>
+       <div id="search">
+                       <input type="search" placeholder="search" class="searchbar">
+    
+                   </div>
+           ';
+    
+           $quantité = "Quantité : ";
+           $conn = mysqli_connect("localhost", "root", "root", "Matos");
+    
+           if (!$conn) {
+               die("Connexion échouée: " . mysqli_connect_error());
+           }
+    $sql = "SELECT Nom,Quantité,Description FROM Materiels ;
+        ";
+    
+           if (mysqli_query($conn, $sql)) {
+               $result = mysqli_query($conn, $sql);
+               if (mysqli_num_rows($result) > 1) {
+    
+             
+                   echo '<div class="container">';
+    
+                   while ($mat = mysqli_fetch_assoc($result)) {
+    
+                       echo ' <div class="box">';
+                       echo ' <h2>' . $mat["Nom"] . '</h2>';
+                       echo '<p>' . '<b>Description : </b>'. $mat["Description"] . '</p>';
+                       echo '<span>' . '<b>' .$quantité . '</b>' . $mat["Quantité"] . '</span>';
+                       echo '</div>';
+                       echo "<br>";
+    
+    
+                   }
+    
+    
+               }
+    
+           }
+    echo "</div>";
+           echo '<footer>
+        <div class="foot">
+            <ul class="namelist">
+                <li>Arnaud</li>
+                <li>Alexandre</li>
+                <li>Steven</li>
+            </ul>
+            <span>©MATOS | 2023 | Mentions Légales</span>
+        </div>
+    </footer>';
+    
+    
         
         
 
