@@ -145,7 +145,7 @@ $passwordverify = hash('sha256', $passworduti);
                         <a href='materielist.php' class='elt elt-hov'>Matériels</a>
                     </div>
                     <div class='relat'>
-                        <a class='elt elt-hov' href='#'>Vos réservations</a>
+                        <a class='elt elt-hov' href='demande.php'>Vos réservations</a>
                     </div>
                     <div class='relat'>
                         <a href='reservation.php' class='elt elt-hov'>Réserver</a>
