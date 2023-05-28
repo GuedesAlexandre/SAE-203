@@ -7,9 +7,7 @@
   
 </head>
 <body>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="js/reservation.js"></script>
+
 <?php 
 session_start();
 
@@ -56,6 +54,8 @@ $passwordverify = hash('sha256', $passworduti);
         <a href="déconnexion.php">Déconnexion</a>
     </div>
 </div>
+
+<main>
    
        ';
     $sqldemandeencours = "SELECT * FROM Emprunt WHERE statut = 0; ";
@@ -64,7 +64,7 @@ $passwordverify = hash('sha256', $passworduti);
     if (mysqli_num_rows($affichedemande) > 0 ) {
         
         echo '<div class="container">';
-        echo "Bienvenue Admin";
+        echo "<span class='bvn'>Bienvenue Admin</span>";
       
         
 
@@ -78,27 +78,26 @@ $passwordverify = hash('sha256', $passworduti);
                 $nomETU = mysqli_fetch_assoc($resultnom);
                 
 
-                   echo ' <div class="box">';
-                   echo ' <h2>' . $mat["ID"] . '</h2>';
-                   echo ' <h2>' . $nom["Nom"] . '</h2>';
-                  
-                   echo ' <h2>' . $nomETU["Nom"].'  '.$nomETU["Prenom"]. '</h2>';
-                   echo '<p>' . $mat["IDE"] . '</p>';
-                   echo '<span>'." Date Debut:".'<br>'. $mat["DateDebut"] .'<br>'."Date Fin:".'<br>'. $mat["DateFin"] . '</span>';
-                   
-                   echo'<span>'.$mat["statut"].'</span>';
-                   echo '</div>';
-                   echo "<br>";
+                    echo ' <div class="boxdem">';
+                    echo ' <h2 class="ID">' . "ID de l'utilisateur :  ". $mat["ID"] . '</h2>';
+                    echo ' <h2 class="obj">' . $nom["Nom"] . '</h2>';
+                    
+                    echo ' <h2 class="nom">' . $nomETU["Nom"].'  '.$nomETU["Prenom"]. '</h2>';
+                    echo '<p>' . $mat["IDE"] . '</p>';
+                    echo '<span>'." Date Debut : " . $mat["DateDebut"] . '<br>' . "Date Fin : ". $mat["DateFin"] . '</span>';
+
+                    echo'<span>'.$mat["statut"].'</span>';
+                    echo '</div>';
                     echo "<br>";
                     echo"<div class='bouton'>";
                     echo"<form action='demande.php' method ='post'>";
-                    echo"<button type='submit' value =".$mat["ID"]." name='agree'>agree</button>";
+                    echo"<button type='submit' value =".$mat["ID"]." name='agree'>Agree</button>";
                     echo"</form>";
                     echo"<form action='demande.php' method ='post'>";
-                    echo"<button type='submit' value =".$mat["ID"]." name='disagree'>disagree</button>";
+                    echo"<button type='submit' value =".$mat["ID"]." name='disagree'>Disagree</button>";
                     echo"</form>";
                     echo"<form action='demande.php' method ='post'>";
-                    echo"<button type='submit' value =".$mat["ID"]." name='delete'>delete</button>";
+                    echo"<button type='submit' value =".$mat["ID"]." name='delete'>Delete</button>";
                     echo"</form>";
                     echo"</div>";
 
@@ -108,30 +107,33 @@ $passwordverify = hash('sha256', $passworduti);
                }
 
                }else{
-                echo"il n'y a pas de demandes en cours";
+                echo"<span class='demande>Il n'y a pas de demandes en cours.</span>";
                }
   if(isset($_POST["agree"])){
       $sql2 = "UPDATE Emprunt SET statut = 1 WHERE  ID = ".$_POST["agree"].";";
       $conn2 = mysqli_connect("localhost","root","root","Matos");
       if(mysqli_query($conn2,$sql2)){
-          echo"good";
+          echo "<span class='status'>La demande à bien été accepté.</span>";
 
       }
   }else if(isset($_POST["delete"])){
       $sql3 = "DELETE FROM EMPRUNT WHERE  ID = ".$_POST["delete"].";";
       $conn3 = mysqli_connect("localhost","root","root","Matos");
       if(mysqli_query($conn3,$sql3)){
-          echo "demande supprimé";
+          echo "<span class='status'>La demande à bien été supprimé.</span>";
       }
   }else if(isset($_POST["disagree"])){
       $sql4 = "UPDATE Emprunt SET statut = 2 WHERE  ID = ".$_POST["disagree"].";";
       $conn4 = mysqli_connect("localhost","root","root","Matos");
       if(mysqli_query($conn4,$sql4)){
-          echo"demande refusé";
+          echo"<span class='status'>La demande à bien été refusé.</span>";
       }
   }
-    }else if($row["Role"] == 0){
-        echo " <div class='pagecontain'>
+    echo '</main>';
+
+}else if($row["Role"] == 0){
+        echo " 
+        <div class='pagecontain'>
         <header>
             <nav class='navbar'>
                 <a href='#' class='logo'>MATOS</a>
@@ -159,7 +161,9 @@ $passwordverify = hash('sha256', $passworduti);
                   <ion-icon name='log-out-outline'></ion-icon>
                   <a href='déconnexion.php'>Déconnexion</a>
               </div>
-          </div>";
+          </div>
+          
+          <main>";
 
         $emailuti = $_SESSION["emailuti"];
           $sqldemandeuti = "SELECT * FROM utilisateurs WHERE Email = '$emailuti';";
@@ -214,7 +218,7 @@ $passwordverify = hash('sha256', $passworduti);
             }
             }
 
-            
+            echo '</main>';
           }
           
 
@@ -223,5 +227,20 @@ $passwordverify = hash('sha256', $passworduti);
    
 
 ?>
+
+    <footer>
+        <div class="foot">
+            <ul class="namelist">
+                <li>Arnaud</li>
+                <li>Alexandre</li>
+                <li>Steven</li>
+            </ul>
+            <span>©MATOS | 2023 | Mentions Légales</span>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/reservation.js"></script>
 </body>
 </html>
