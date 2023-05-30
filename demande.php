@@ -157,7 +157,7 @@ $passwordverify = hash('sha256', $passworduti);
         </header>
     
           <div class='deco'>
-              <div class='box'>
+              <div class='box1'>
                   <ion-icon name='log-out-outline'></ion-icon>
                   <a href='déconnexion.php'>Déconnexion</a>
               </div>
