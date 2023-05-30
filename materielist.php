@@ -57,10 +57,105 @@ $passwordverify = hash('sha256', $passworduti);
     </div>
 </div>
    <div id="search">
-                   <input type="search" placeholder="search" class="searchbar">
-
+   <form action="materielist.php" method="GET">
+                   <input type="search" name="search" placeholder="search" class="searchbar" onkeydown="if (event.keyCode === 13) this.form.submit()">
+                   </form>
                </div>
        ';
+       if(isset($_GET["search"])){
+    
+     
+        $searchQuery = $_GET['search'];
+        
+        
+        $host = 'localhost';
+        $dbName = 'Matos';
+        $username = 'root';
+        $password = 'root';
+        
+        try {
+          $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $username, $password);
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+          $query = "SELECT * FROM Materiels WHERE Nom LIKE :search";
+          $stmt = $pdo->prepare($query);
+          $stmt->execute(['search' => "%$searchQuery%"]);
+        
+       
+          if ($stmt->rowCount() > 0) {
+           
+            $results = '';
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          
+              $results .= "<p>{$row['Nom']} - {$row['ID']}</p>"; 
+              
+              echo"<form action='materielist.php' method='post'>
+              <input type='submit' value='clear' name='clear'>
+              </form>
+              ";
+              if(isset($_POST["clear"])){
+                $quantité = "Quantité : ";
+       $conn = mysqli_connect("localhost", "root", "root", "Matos");
+
+       if (!$conn) {
+           die("Connexion échouée: " . mysqli_connect_error());
+       }
+$sql = "SELECT Nom,Quantité,Description FROM Materiels ;
+    ";
+
+       if (mysqli_query($conn, $sql)) {
+           $result = mysqli_query($conn, $sql);
+           if (mysqli_num_rows($result) > 1) {
+
+         
+               echo '<div class="container">';
+
+               while ($mat = mysqli_fetch_assoc($result)) {
+
+                   echo ' <div class="box">';
+                   echo ' <h2>' . $mat["Nom"] . '</h2>';
+                   echo '<p>' . '<b>Description : </b>'. $mat["Description"] . '</p>';
+                   echo '<span>' . '<b>' .$quantité . '</b>' . $mat["Quantité"] . '</span>';
+                   echo '</div>';
+                   echo "<br>";
+
+
+               }
+
+
+           }
+
+       }
+echo "</div>";
+       echo '<footer>
+    <div class="foot">
+        <ul class="namelist">
+            <li>Arnaud</li>
+            <li>Alexandre</li>
+            <li>Steven</li>
+        </ul>
+        <span>©MATOS | 2023 | Mentions Légales</span>
+    </div>
+</footer>';
+
+              }
+            }
+        
+     
+            echo '<div>' . $results . '</div>';
+          } else {
+       
+            echo '<div>Aucun résultat trouvé.</div>';
+          }
+        } catch (PDOException $e) {
+      
+          echo 'Erreur de connexion à la base de données : ' . $e->getMessage();
+        }
+        
+        
+        
+        }else{
+        
 
        $quantité = "Quantité : ";
        $conn = mysqli_connect("localhost", "root", "root", "Matos");
@@ -105,6 +200,7 @@ echo "</div>";
         <span>©MATOS | 2023 | Mentions Légales</span>
     </div>
 </footer>';
+    }
 
 
 
@@ -139,10 +235,107 @@ echo "</div>";
         </div>
     </div>
        <div id="search">
-                       <input type="search" placeholder="search" class="searchbar">
+       <form action="materielist.php" method="GET">
+       <input type="search" name="search" placeholder="search" class="searchbar" onkeydown="if (event.keyCode === 13) this.form.submit()">
+       </form>
     
                    </div>
            ';
+           if(isset($_GET["search"])){
+    
+         
+            $searchQuery = $_GET['search'];
+            
+          
+            $host = 'localhost';
+            $dbName = 'Matos';
+            $username = 'root';
+            $password = 'root';
+            
+            try {
+              $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $username, $password);
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            
+              $query = "SELECT * FROM Materiels WHERE Nom LIKE :search";
+              $stmt = $pdo->prepare($query);
+              $stmt->execute(['search' => "%$searchQuery%"]);
+            
+        
+              if ($stmt->rowCount() > 0) {
+               
+                $results = '';
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                 
+                  $results .= "<p>{$row['Nom']} - {$row['ID']}</p>"; 
+                  
+                  echo"<form action='materielist.php' method='post'>
+                  <input type='submit' value='clear' name='clear'>
+                  </form>
+                  ";
+                  if(isset($_POST["clear"])){
+                    $quantité = "Quantité : ";
+           $conn = mysqli_connect("localhost", "root", "root", "Matos");
+    
+           if (!$conn) {
+               die("Connexion échouée: " . mysqli_connect_error());
+           }
+    $sql = "SELECT Nom,Quantité,Description FROM Materiels ;
+        ";
+    
+           if (mysqli_query($conn, $sql)) {
+               $result = mysqli_query($conn, $sql);
+               if (mysqli_num_rows($result) > 1) {
+    
+             
+                   echo '<div class="container">';
+    
+                   while ($mat = mysqli_fetch_assoc($result)) {
+    
+                       echo ' <div class="box">';
+                       echo ' <h2>' . $mat["Nom"] . '</h2>';
+                       echo '<p>' . '<b>Description : </b>'. $mat["Description"] . '</p>';
+                       echo '<span>' . '<b>' .$quantité . '</b>' . $mat["Quantité"] . '</span>';
+                       echo '</div>';
+                       echo "<br>";
+    
+    
+                   }
+    
+    
+               }
+    
+           }
+    echo "</div>";
+           echo '<footer>
+        <div class="foot">
+            <ul class="namelist">
+                <li>Arnaud</li>
+                <li>Alexandre</li>
+                <li>Steven</li>
+            </ul>
+            <span>©MATOS | 2023 | Mentions Légales</span>
+        </div>
+    </footer>';
+    
+                  }
+                }
+            
+           
+                echo '<div>' . $results . '</div>';
+              } else {
+                // Affiche un message si aucun résultat n'a été trouvé
+                echo '<div>Aucun résultat trouvé.</div>';
+              }
+            } catch (PDOException $e) {
+             
+              echo 'Erreur de connexion à la base de données : ' . $e->getMessage();
+            }
+            
+            
+            
+            }else{
+            
     
            $quantité = "Quantité : ";
            $conn = mysqli_connect("localhost", "root", "root", "Matos");
@@ -187,22 +380,23 @@ echo "</div>";
             <span>©MATOS | 2023 | Mentions Légales</span>
         </div>
     </footer>';
-    
-    
-        
-        
+        }
 
-    }else{
-       echo "tu fais quoi ici petit malin";
+    }
 
-}
+    
+
     // Fermeture de la connexion à la base de données
  $conn->close();
 
-// Vérification de la connexion
+
 
 
 ?>
+
+
+
+
 
 
 </body>
