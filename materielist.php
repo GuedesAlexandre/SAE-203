@@ -87,7 +87,10 @@ $passwordverify = hash('sha256', $passworduti);
             $results = '';
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
           
-              $results .= "<p>{$row['Nom']} - {$row['ID']}</p>"; 
+                $results .= "<p>{$row['Nom']} - {$row['ID']}</p><br>
+                <p>{$row['Description']} <br>
+                <span>Quantité : {$row['Quantité']}</span>"; 
+                  
               
               echo"<form action='materielist.php' method='post'>
               <input type='submit' value='clear' name='clear'>
@@ -141,8 +144,9 @@ echo "</div>";
               }
             }
         
-     
-            echo '<div>' . $results . '</div>';
+            echo'<div class="container">';
+            echo '<div class="box">' . $results . '</div>';
+            echo'</div>';
           } else {
        
             echo '<div>Aucun résultat trouvé.</div>';
@@ -267,8 +271,10 @@ echo "</div>";
                 $results = '';
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                  
-                  $results .= "<p>{$row['Nom']} - {$row['ID']}</p>"; 
-                  
+                  $results .= "<p>{$row['Nom']} - {$row['ID']}</p><br>
+                  <p>{$row['Description']} <br>
+                  <span>Quantité : {$row['Quantité']}</span>"; 
+                    
                   echo"<form action='materielist.php' method='post'>
                   <input type='submit' value='clear' name='clear'>
                   </form>
@@ -321,8 +327,9 @@ echo "</div>";
                   }
                 }
             
-           
-                echo '<div>' . $results . '</div>';
+                echo'<div class="container">';
+                echo '<div class="box">' . $results . '</div>';
+                echo '</div>';
               } else {
                 // Affiche un message si aucun résultat n'a été trouvé
                 echo '<div>Aucun résultat trouvé.</div>';
